@@ -1,0 +1,15 @@
+[package]
+name = "floem-tailwind"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.87"
+description = "Tailwind-style utility methods for Floem styling"
+license = "MIT"
+
+[dependencies]
+floem = { path = "../floem" }
+peniko = "0.5.0"
+
+[[example]]
+name = "demo"
+path = "examples/demo.rs"
