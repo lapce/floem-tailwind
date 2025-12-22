@@ -146,6 +146,16 @@ pub mod font_weight {
     pub const BLACK: Weight = Weight::BLACK;           // 900
 }
 
+/// Line height values matching Tailwind CSS leading-* utilities
+pub mod line_height {
+    pub const LEADING_NONE: f32 = 1.0;
+    pub const LEADING_TIGHT: f32 = 1.25;
+    pub const LEADING_SNUG: f32 = 1.375;
+    pub const LEADING_NORMAL: f32 = 1.5;
+    pub const LEADING_RELAXED: f32 = 1.625;
+    pub const LEADING_LOOSE: f32 = 2.0;
+}
+
 /// Macro to generate width methods
 macro_rules! width_methods {
     ($($name:ident => $value:expr),* $(,)?) => {
@@ -441,6 +451,26 @@ macro_rules! impl_font_weight_methods {
         $(
             fn $name(self) -> Self {
                 self.font_weight($value)
+            }
+        )*
+    };
+}
+
+/// Macro to generate line-height methods
+macro_rules! line_height_methods {
+    ($($name:ident => $value:expr),* $(,)?) => {
+        $(
+            fn $name(self) -> Self;
+        )*
+    };
+}
+
+/// Macro to implement line-height methods
+macro_rules! impl_line_height_methods {
+    ($($name:ident => $value:expr),* $(,)?) => {
+        $(
+            fn $name(self) -> Self {
+                self.line_height($value)
             }
         )*
     };
@@ -1177,6 +1207,16 @@ pub trait TailwindExt: Sized {
         font_bold => font_weight::BOLD,
         font_extrabold => font_weight::EXTRABOLD,
         font_black => font_weight::BLACK,
+    }
+
+    // === Line Height Methods ===
+    line_height_methods! {
+        leading_none => line_height::LEADING_NONE,
+        leading_tight => line_height::LEADING_TIGHT,
+        leading_snug => line_height::LEADING_SNUG,
+        leading_normal => line_height::LEADING_NORMAL,
+        leading_relaxed => line_height::LEADING_RELAXED,
+        leading_loose => line_height::LEADING_LOOSE,
     }
 
     // === Display Methods ===
@@ -1948,6 +1988,16 @@ impl TailwindExt for Style {
         font_bold => font_weight::BOLD,
         font_extrabold => font_weight::EXTRABOLD,
         font_black => font_weight::BLACK,
+    }
+
+    // === Line Height Implementations ===
+    impl_line_height_methods! {
+        leading_none => line_height::LEADING_NONE,
+        leading_tight => line_height::LEADING_TIGHT,
+        leading_snug => line_height::LEADING_SNUG,
+        leading_normal => line_height::LEADING_NORMAL,
+        leading_relaxed => line_height::LEADING_RELAXED,
+        leading_loose => line_height::LEADING_LOOSE,
     }
 
     // === Display Implementations ===
