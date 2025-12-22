@@ -156,6 +156,79 @@ pub mod line_height {
     pub const LEADING_LOOSE: f32 = 2.0;
 }
 
+/// Box shadow presets matching Tailwind CSS shadow-* utilities
+/// Each shadow is defined by (h_offset, v_offset, blur, spread, opacity)
+pub mod shadow {
+    use floem::style::BoxShadow;
+    use peniko::Color;
+
+    /// Creates a shadow color with the given opacity (0.0 - 1.0)
+    fn shadow_color(opacity: f32) -> Color {
+        Color::from_rgba8(0, 0, 0, (opacity * 255.0) as u8)
+    }
+
+    /// shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05)
+    pub fn shadow_sm() -> BoxShadow {
+        BoxShadow::new()
+            .h_offset(0.0)
+            .v_offset(1.0)
+            .blur_radius(2.0)
+            .spread(0.0)
+            .color(shadow_color(0.05))
+    }
+
+    /// shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)
+    /// (simplified to single shadow)
+    pub fn shadow_default() -> BoxShadow {
+        BoxShadow::new()
+            .h_offset(0.0)
+            .v_offset(1.0)
+            .blur_radius(3.0)
+            .spread(0.0)
+            .color(shadow_color(0.1))
+    }
+
+    /// shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1)
+    pub fn shadow_md() -> BoxShadow {
+        BoxShadow::new()
+            .h_offset(0.0)
+            .v_offset(4.0)
+            .blur_radius(6.0)
+            .spread(-1.0)
+            .color(shadow_color(0.1))
+    }
+
+    /// shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1)
+    pub fn shadow_lg() -> BoxShadow {
+        BoxShadow::new()
+            .h_offset(0.0)
+            .v_offset(10.0)
+            .blur_radius(15.0)
+            .spread(-3.0)
+            .color(shadow_color(0.1))
+    }
+
+    /// shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1)
+    pub fn shadow_xl() -> BoxShadow {
+        BoxShadow::new()
+            .h_offset(0.0)
+            .v_offset(20.0)
+            .blur_radius(25.0)
+            .spread(-5.0)
+            .color(shadow_color(0.1))
+    }
+
+    /// shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25)
+    pub fn shadow_2xl() -> BoxShadow {
+        BoxShadow::new()
+            .h_offset(0.0)
+            .v_offset(25.0)
+            .blur_radius(50.0)
+            .spread(-12.0)
+            .color(shadow_color(0.25))
+    }
+}
+
 /// Macro to generate width methods
 macro_rules! width_methods {
     ($($name:ident => $value:expr),* $(,)?) => {
@@ -975,6 +1048,15 @@ pub trait TailwindExt: Sized {
     fn border_4(self) -> Self;
     fn border_8(self) -> Self;
 
+    // === Shadow Methods ===
+    fn shadow_sm(self) -> Self;
+    fn shadow(self) -> Self;
+    fn shadow_md(self) -> Self;
+    fn shadow_lg(self) -> Self;
+    fn shadow_xl(self) -> Self;
+    fn shadow_2xl(self) -> Self;
+    fn shadow_none(self) -> Self;
+
     // === Background Color Methods ===
     fn bg(self, color: impl Into<Color>) -> Self;
     fn bg_transparent(self) -> Self;
@@ -1755,6 +1837,15 @@ impl TailwindExt for Style {
     fn border_2(self) -> Self { self.border(2.0) }
     fn border_4(self) -> Self { self.border(4.0) }
     fn border_8(self) -> Self { self.border(8.0) }
+
+    // === Shadow Implementations ===
+    fn shadow_sm(self) -> Self { self.apply_box_shadows(vec![shadow::shadow_sm()]) }
+    fn shadow(self) -> Self { self.apply_box_shadows(vec![shadow::shadow_default()]) }
+    fn shadow_md(self) -> Self { self.apply_box_shadows(vec![shadow::shadow_md()]) }
+    fn shadow_lg(self) -> Self { self.apply_box_shadows(vec![shadow::shadow_lg()]) }
+    fn shadow_xl(self) -> Self { self.apply_box_shadows(vec![shadow::shadow_xl()]) }
+    fn shadow_2xl(self) -> Self { self.apply_box_shadows(vec![shadow::shadow_2xl()]) }
+    fn shadow_none(self) -> Self { self.apply_box_shadows(vec![]) }
 
     // === Background Color Implementations ===
     fn bg(self, color: impl Into<Color>) -> Self { self.background(color.into()) }
