@@ -3,7 +3,7 @@
 //! Run with: cargo run --example demo
 
 use floem::prelude::*;
-use floem_tailwind::StyledExt;
+use floem_tailwind::TailwindExt;
 
 fn main() {
     floem::launch(app_view);

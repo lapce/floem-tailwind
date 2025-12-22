@@ -1861,9 +1861,9 @@ dependencies = [
 
 [[package]]
 name = "lapce-xi-rope"
-version = "0.3.2"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6516aaa99c5059dc1a1bc02ed782d5e524699c1b4330028a6bed8259f9d9ff0a"
+checksum = "edc91b8df26aaa2700656a7c1a5b0aeb587aca512a44618974f79673dbe793ba"
 dependencies = [
  "bytecount",
  "memchr",

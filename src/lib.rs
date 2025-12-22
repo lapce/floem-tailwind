@@ -2,7 +2,7 @@
 //!
 //! Tailwind-style utility methods for Floem styling.
 //!
-//! This crate provides a `StyledExt` trait that extends Floem's `Style` with
+//! This crate provides a `TailwindExt` trait that extends Floem's `Style` with
 //! shorthand methods following Tailwind CSS naming conventions.
 //!
 //! ## Spacing Scale
@@ -19,7 +19,7 @@
 //!
 //! ```rust
 //! use floem::style::Style;
-//! use floem_tailwind::StyledExt;
+//! use floem_tailwind::TailwindExt;
 //!
 //! let style = Style::new()
 //!     .w_64()        // width: 256px
@@ -33,7 +33,7 @@
 //!
 //! ```rust
 //! use floem::style::Style;
-//! use floem_tailwind::StyledExt;
+//! use floem_tailwind::TailwindExt;
 //!
 //! let style = Style::new()
 //!     .bg_blue_500()     // background: blue-500
@@ -111,6 +111,39 @@ pub mod radius {
     pub const ROUNDED_2XL: f64 = 16.0;
     pub const ROUNDED_3XL: f64 = 24.0;
     pub const ROUNDED_FULL: f64 = 9999.0;
+}
+
+/// Font size scale (in pixels)
+/// Based on Tailwind's default font sizes with 16px base
+pub mod font_size {
+    pub const TEXT_XS: f32 = 12.0;    // 0.75rem
+    pub const TEXT_SM: f32 = 14.0;    // 0.875rem
+    pub const TEXT_BASE: f32 = 16.0;  // 1rem
+    pub const TEXT_LG: f32 = 18.0;    // 1.125rem
+    pub const TEXT_XL: f32 = 20.0;    // 1.25rem
+    pub const TEXT_2XL: f32 = 24.0;   // 1.5rem
+    pub const TEXT_3XL: f32 = 30.0;   // 1.875rem
+    pub const TEXT_4XL: f32 = 36.0;   // 2.25rem
+    pub const TEXT_5XL: f32 = 48.0;   // 3rem
+    pub const TEXT_6XL: f32 = 60.0;   // 3.75rem
+    pub const TEXT_7XL: f32 = 72.0;   // 4.5rem
+    pub const TEXT_8XL: f32 = 96.0;   // 6rem
+    pub const TEXT_9XL: f32 = 128.0;  // 8rem
+}
+
+/// Font weight values matching Tailwind CSS
+pub mod font_weight {
+    use floem::text::Weight;
+
+    pub const THIN: Weight = Weight::THIN;             // 100
+    pub const EXTRALIGHT: Weight = Weight::EXTRA_LIGHT; // 200
+    pub const LIGHT: Weight = Weight::LIGHT;           // 300
+    pub const NORMAL: Weight = Weight::NORMAL;         // 400
+    pub const MEDIUM: Weight = Weight::MEDIUM;         // 500
+    pub const SEMIBOLD: Weight = Weight::SEMIBOLD;     // 600
+    pub const BOLD: Weight = Weight::BOLD;             // 700
+    pub const EXTRABOLD: Weight = Weight::EXTRA_BOLD;  // 800
+    pub const BLACK: Weight = Weight::BLACK;           // 900
 }
 
 /// Macro to generate width methods
@@ -373,8 +406,48 @@ macro_rules! impl_rounded_methods {
     };
 }
 
+/// Macro to generate font-size methods
+macro_rules! font_size_methods {
+    ($($name:ident => $value:expr),* $(,)?) => {
+        $(
+            fn $name(self) -> Self;
+        )*
+    };
+}
+
+/// Macro to implement font-size methods
+macro_rules! impl_font_size_methods {
+    ($($name:ident => $value:expr),* $(,)?) => {
+        $(
+            fn $name(self) -> Self {
+                self.font_size($value)
+            }
+        )*
+    };
+}
+
+/// Macro to generate font-weight methods
+macro_rules! font_weight_methods {
+    ($($name:ident => $value:expr),* $(,)?) => {
+        $(
+            fn $name(self) -> Self;
+        )*
+    };
+}
+
+/// Macro to implement font-weight methods
+macro_rules! impl_font_weight_methods {
+    ($($name:ident => $value:expr),* $(,)?) => {
+        $(
+            fn $name(self) -> Self {
+                self.font_weight($value)
+            }
+        )*
+    };
+}
+
 /// Extension trait that adds Tailwind-style utility methods to Floem's Style.
-pub trait StyledExt: Sized {
+pub trait TailwindExt: Sized {
     // === Width Methods ===
     width_methods! {
         w_0 => 0.0,
@@ -1076,6 +1149,61 @@ pub trait StyledExt: Sized {
     fn text_blue_900(self) -> Self;
     fn text_blue_950(self) -> Self;
 
+    // === Font Size Methods ===
+    font_size_methods! {
+        text_xs => font_size::TEXT_XS,
+        text_sm => font_size::TEXT_SM,
+        text_base => font_size::TEXT_BASE,
+        text_lg => font_size::TEXT_LG,
+        text_xl => font_size::TEXT_XL,
+        text_2xl => font_size::TEXT_2XL,
+        text_3xl => font_size::TEXT_3XL,
+        text_4xl => font_size::TEXT_4XL,
+        text_5xl => font_size::TEXT_5XL,
+        text_6xl => font_size::TEXT_6XL,
+        text_7xl => font_size::TEXT_7XL,
+        text_8xl => font_size::TEXT_8XL,
+        text_9xl => font_size::TEXT_9XL,
+    }
+
+    // === Font Weight Methods ===
+    font_weight_methods! {
+        font_thin => font_weight::THIN,
+        font_extralight => font_weight::EXTRALIGHT,
+        font_light => font_weight::LIGHT,
+        font_normal => font_weight::NORMAL,
+        font_medium => font_weight::MEDIUM,
+        font_semibold => font_weight::SEMIBOLD,
+        font_bold => font_weight::BOLD,
+        font_extrabold => font_weight::EXTRABOLD,
+        font_black => font_weight::BLACK,
+    }
+
+    // === Display Methods ===
+    fn flex(self) -> Self;
+    fn block(self) -> Self;
+    fn grid(self) -> Self;
+    fn hidden(self) -> Self;
+
+    // === Flex Direction Methods ===
+    fn flex_row(self) -> Self;
+    fn flex_col(self) -> Self;
+    fn flex_row_reverse(self) -> Self;
+    fn flex_col_reverse(self) -> Self;
+
+    // === Flex Wrap Methods ===
+    fn wrap(self) -> Self;
+    fn nowrap(self) -> Self;
+    fn wrap_reverse(self) -> Self;
+
+    // === Cursor Methods ===
+    fn cursor_pointer(self) -> Self;
+    fn cursor_default(self) -> Self;
+    fn cursor_text(self) -> Self;
+    fn cursor_move(self) -> Self;
+    fn cursor_grab(self) -> Self;
+    fn cursor_grabbing(self) -> Self;
+
     // === Border Color Methods ===
     fn border_transparent(self) -> Self;
     fn border_black(self) -> Self;
@@ -1090,7 +1218,7 @@ pub trait StyledExt: Sized {
     fn border_green_500(self) -> Self;
 }
 
-impl StyledExt for Style {
+impl TailwindExt for Style {
     // === Width Implementations ===
     impl_width_methods! {
         w_0 => 0.0,
@@ -1791,6 +1919,61 @@ impl StyledExt for Style {
     fn text_blue_800(self) -> Self { self.color(colors::blue::C800) }
     fn text_blue_900(self) -> Self { self.color(colors::blue::C900) }
     fn text_blue_950(self) -> Self { self.color(colors::blue::C950) }
+
+    // === Font Size Implementations ===
+    impl_font_size_methods! {
+        text_xs => font_size::TEXT_XS,
+        text_sm => font_size::TEXT_SM,
+        text_base => font_size::TEXT_BASE,
+        text_lg => font_size::TEXT_LG,
+        text_xl => font_size::TEXT_XL,
+        text_2xl => font_size::TEXT_2XL,
+        text_3xl => font_size::TEXT_3XL,
+        text_4xl => font_size::TEXT_4XL,
+        text_5xl => font_size::TEXT_5XL,
+        text_6xl => font_size::TEXT_6XL,
+        text_7xl => font_size::TEXT_7XL,
+        text_8xl => font_size::TEXT_8XL,
+        text_9xl => font_size::TEXT_9XL,
+    }
+
+    // === Font Weight Implementations ===
+    impl_font_weight_methods! {
+        font_thin => font_weight::THIN,
+        font_extralight => font_weight::EXTRALIGHT,
+        font_light => font_weight::LIGHT,
+        font_normal => font_weight::NORMAL,
+        font_medium => font_weight::MEDIUM,
+        font_semibold => font_weight::SEMIBOLD,
+        font_bold => font_weight::BOLD,
+        font_extrabold => font_weight::EXTRABOLD,
+        font_black => font_weight::BLACK,
+    }
+
+    // === Display Implementations ===
+    fn flex(self) -> Self { self.display(floem::style::Display::Flex) }
+    fn block(self) -> Self { self.display(floem::style::Display::Block) }
+    fn grid(self) -> Self { self.display(floem::style::Display::Grid) }
+    fn hidden(self) -> Self { self.display(floem::style::Display::None) }
+
+    // === Flex Direction Implementations ===
+    fn flex_row(self) -> Self { self.flex_direction(floem::style::FlexDirection::Row) }
+    fn flex_col(self) -> Self { self.flex_direction(floem::style::FlexDirection::Column) }
+    fn flex_row_reverse(self) -> Self { self.flex_direction(floem::style::FlexDirection::RowReverse) }
+    fn flex_col_reverse(self) -> Self { self.flex_direction(floem::style::FlexDirection::ColumnReverse) }
+
+    // === Flex Wrap Implementations ===
+    fn wrap(self) -> Self { self.flex_wrap(floem::style::FlexWrap::Wrap) }
+    fn nowrap(self) -> Self { self.flex_wrap(floem::style::FlexWrap::NoWrap) }
+    fn wrap_reverse(self) -> Self { self.flex_wrap(floem::style::FlexWrap::WrapReverse) }
+
+    // === Cursor Implementations ===
+    fn cursor_pointer(self) -> Self { self.cursor(floem::style::CursorStyle::Pointer) }
+    fn cursor_default(self) -> Self { self.cursor(floem::style::CursorStyle::Default) }
+    fn cursor_text(self) -> Self { self.cursor(floem::style::CursorStyle::Text) }
+    fn cursor_move(self) -> Self { self.cursor(floem::style::CursorStyle::Move) }
+    fn cursor_grab(self) -> Self { self.cursor(floem::style::CursorStyle::Grab) }
+    fn cursor_grabbing(self) -> Self { self.cursor(floem::style::CursorStyle::Grabbing) }
 
     // === Border Color Implementations ===
     fn border_transparent(self) -> Self { self.border_color(colors::TRANSPARENT) }
