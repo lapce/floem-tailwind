@@ -87,11 +87,11 @@ pub mod spacing {
     pub const SPACING_96: f64 = 384.0;
 
     // Named container sizes
-    pub const SIZE_XS: f64 = 320.0;  // 20rem
-    pub const SIZE_SM: f64 = 384.0;  // 24rem
-    pub const SIZE_MD: f64 = 448.0;  // 28rem
-    pub const SIZE_LG: f64 = 512.0;  // 32rem
-    pub const SIZE_XL: f64 = 576.0;  // 36rem
+    pub const SIZE_XS: f64 = 320.0; // 20rem
+    pub const SIZE_SM: f64 = 384.0; // 24rem
+    pub const SIZE_MD: f64 = 448.0; // 28rem
+    pub const SIZE_LG: f64 = 512.0; // 32rem
+    pub const SIZE_XL: f64 = 576.0; // 36rem
     pub const SIZE_2XL: f64 = 672.0; // 42rem
     pub const SIZE_3XL: f64 = 768.0; // 48rem
     pub const SIZE_4XL: f64 = 896.0; // 56rem
@@ -116,34 +116,34 @@ pub mod radius {
 /// Font size scale (in pixels)
 /// Based on Tailwind's default font sizes with 16px base
 pub mod font_size {
-    pub const TEXT_XS: f32 = 12.0;    // 0.75rem
-    pub const TEXT_SM: f32 = 14.0;    // 0.875rem
-    pub const TEXT_BASE: f32 = 16.0;  // 1rem
-    pub const TEXT_LG: f32 = 18.0;    // 1.125rem
-    pub const TEXT_XL: f32 = 20.0;    // 1.25rem
-    pub const TEXT_2XL: f32 = 24.0;   // 1.5rem
-    pub const TEXT_3XL: f32 = 30.0;   // 1.875rem
-    pub const TEXT_4XL: f32 = 36.0;   // 2.25rem
-    pub const TEXT_5XL: f32 = 48.0;   // 3rem
-    pub const TEXT_6XL: f32 = 60.0;   // 3.75rem
-    pub const TEXT_7XL: f32 = 72.0;   // 4.5rem
-    pub const TEXT_8XL: f32 = 96.0;   // 6rem
-    pub const TEXT_9XL: f32 = 128.0;  // 8rem
+    pub const TEXT_XS: f32 = 12.0; // 0.75rem
+    pub const TEXT_SM: f32 = 14.0; // 0.875rem
+    pub const TEXT_BASE: f32 = 16.0; // 1rem
+    pub const TEXT_LG: f32 = 18.0; // 1.125rem
+    pub const TEXT_XL: f32 = 20.0; // 1.25rem
+    pub const TEXT_2XL: f32 = 24.0; // 1.5rem
+    pub const TEXT_3XL: f32 = 30.0; // 1.875rem
+    pub const TEXT_4XL: f32 = 36.0; // 2.25rem
+    pub const TEXT_5XL: f32 = 48.0; // 3rem
+    pub const TEXT_6XL: f32 = 60.0; // 3.75rem
+    pub const TEXT_7XL: f32 = 72.0; // 4.5rem
+    pub const TEXT_8XL: f32 = 96.0; // 6rem
+    pub const TEXT_9XL: f32 = 128.0; // 8rem
 }
 
 /// Font weight values matching Tailwind CSS
 pub mod font_weight {
     use floem::text::Weight;
 
-    pub const THIN: Weight = Weight::THIN;             // 100
+    pub const THIN: Weight = Weight::THIN; // 100
     pub const EXTRALIGHT: Weight = Weight::EXTRA_LIGHT; // 200
-    pub const LIGHT: Weight = Weight::LIGHT;           // 300
-    pub const NORMAL: Weight = Weight::NORMAL;         // 400
-    pub const MEDIUM: Weight = Weight::MEDIUM;         // 500
-    pub const SEMIBOLD: Weight = Weight::SEMIBOLD;     // 600
-    pub const BOLD: Weight = Weight::BOLD;             // 700
-    pub const EXTRABOLD: Weight = Weight::EXTRA_BOLD;  // 800
-    pub const BLACK: Weight = Weight::BLACK;           // 900
+    pub const LIGHT: Weight = Weight::LIGHT; // 300
+    pub const NORMAL: Weight = Weight::NORMAL; // 400
+    pub const MEDIUM: Weight = Weight::MEDIUM; // 500
+    pub const SEMIBOLD: Weight = Weight::SEMIBOLD; // 600
+    pub const BOLD: Weight = Weight::BOLD; // 700
+    pub const EXTRABOLD: Weight = Weight::EXTRA_BOLD; // 800
+    pub const BLACK: Weight = Weight::BLACK; // 900
 }
 
 /// Line height values matching Tailwind CSS leading-* utilities
@@ -607,18 +607,18 @@ pub trait TailwindExt: Sized {
     fn w_full(self) -> Self;
     fn w_auto(self) -> Self;
     // Fractional widths (GPUI-style: underscore = fraction, e.g., w_1_2 = 1/2 = 50%)
-    fn w_1_2(self) -> Self;   // 1/2 = 50%
-    fn w_1_3(self) -> Self;   // 1/3 = 33.33%
-    fn w_2_3(self) -> Self;   // 2/3 = 66.67%
-    fn w_1_4(self) -> Self;   // 1/4 = 25%
-    fn w_3_4(self) -> Self;   // 3/4 = 75%
-    fn w_1_5(self) -> Self;   // 1/5 = 20%
-    fn w_2_5(self) -> Self;   // 2/5 = 40%
-    fn w_3_5(self) -> Self;   // 3/5 = 60%
-    fn w_4_5(self) -> Self;   // 4/5 = 80%
-    fn w_1_6(self) -> Self;   // 1/6 = 16.67%
-    fn w_5_6(self) -> Self;   // 5/6 = 83.33%
-    fn w_1_12(self) -> Self;  // 1/12 = 8.33%
+    fn w_1_2(self) -> Self; // 1/2 = 50%
+    fn w_1_3(self) -> Self; // 1/3 = 33.33%
+    fn w_2_3(self) -> Self; // 2/3 = 66.67%
+    fn w_1_4(self) -> Self; // 1/4 = 25%
+    fn w_3_4(self) -> Self; // 3/4 = 75%
+    fn w_1_5(self) -> Self; // 1/5 = 20%
+    fn w_2_5(self) -> Self; // 2/5 = 40%
+    fn w_3_5(self) -> Self; // 3/5 = 60%
+    fn w_4_5(self) -> Self; // 4/5 = 80%
+    fn w_1_6(self) -> Self; // 1/6 = 16.67%
+    fn w_5_6(self) -> Self; // 5/6 = 83.33%
+    fn w_1_12(self) -> Self; // 1/12 = 8.33%
 
     // === Height Methods ===
     height_methods! {
@@ -676,18 +676,18 @@ pub trait TailwindExt: Sized {
     fn h_full(self) -> Self;
     fn h_auto(self) -> Self;
     // Fractional heights (GPUI-style: underscore = fraction, e.g., h_1_2 = 1/2 = 50%)
-    fn h_1_2(self) -> Self;   // 1/2 = 50%
-    fn h_1_3(self) -> Self;   // 1/3 = 33.33%
-    fn h_2_3(self) -> Self;   // 2/3 = 66.67%
-    fn h_1_4(self) -> Self;   // 1/4 = 25%
-    fn h_3_4(self) -> Self;   // 3/4 = 75%
-    fn h_1_5(self) -> Self;   // 1/5 = 20%
-    fn h_2_5(self) -> Self;   // 2/5 = 40%
-    fn h_3_5(self) -> Self;   // 3/5 = 60%
-    fn h_4_5(self) -> Self;   // 4/5 = 80%
-    fn h_1_6(self) -> Self;   // 1/6 = 16.67%
-    fn h_5_6(self) -> Self;   // 5/6 = 83.33%
-    fn h_1_12(self) -> Self;  // 1/12 = 8.33%
+    fn h_1_2(self) -> Self; // 1/2 = 50%
+    fn h_1_3(self) -> Self; // 1/3 = 33.33%
+    fn h_2_3(self) -> Self; // 2/3 = 66.67%
+    fn h_1_4(self) -> Self; // 1/4 = 25%
+    fn h_3_4(self) -> Self; // 3/4 = 75%
+    fn h_1_5(self) -> Self; // 1/5 = 20%
+    fn h_2_5(self) -> Self; // 2/5 = 40%
+    fn h_3_5(self) -> Self; // 3/5 = 60%
+    fn h_4_5(self) -> Self; // 4/5 = 80%
+    fn h_1_6(self) -> Self; // 1/6 = 16.67%
+    fn h_5_6(self) -> Self; // 5/6 = 83.33%
+    fn h_1_12(self) -> Self; // 1/12 = 8.33%
 
     // === Size Methods (width + height) ===
     size_methods! {
@@ -1444,34 +1444,84 @@ impl TailwindExt for Style {
     }
 
     // Named width sizes
-    fn w_xs(self) -> Self { self.width(spacing::SIZE_XS) }
-    fn w_sm(self) -> Self { self.width(spacing::SIZE_SM) }
-    fn w_md(self) -> Self { self.width(spacing::SIZE_MD) }
-    fn w_lg(self) -> Self { self.width(spacing::SIZE_LG) }
-    fn w_xl(self) -> Self { self.width(spacing::SIZE_XL) }
-    fn w_2xl(self) -> Self { self.width(spacing::SIZE_2XL) }
-    fn w_3xl(self) -> Self { self.width(spacing::SIZE_3XL) }
-    fn w_4xl(self) -> Self { self.width(spacing::SIZE_4XL) }
-    fn w_5xl(self) -> Self { self.width(spacing::SIZE_5XL) }
-    fn w_6xl(self) -> Self { self.width(spacing::SIZE_6XL) }
-    fn w_7xl(self) -> Self { self.width(spacing::SIZE_7XL) }
+    fn w_xs(self) -> Self {
+        self.width(spacing::SIZE_XS)
+    }
+    fn w_sm(self) -> Self {
+        self.width(spacing::SIZE_SM)
+    }
+    fn w_md(self) -> Self {
+        self.width(spacing::SIZE_MD)
+    }
+    fn w_lg(self) -> Self {
+        self.width(spacing::SIZE_LG)
+    }
+    fn w_xl(self) -> Self {
+        self.width(spacing::SIZE_XL)
+    }
+    fn w_2xl(self) -> Self {
+        self.width(spacing::SIZE_2XL)
+    }
+    fn w_3xl(self) -> Self {
+        self.width(spacing::SIZE_3XL)
+    }
+    fn w_4xl(self) -> Self {
+        self.width(spacing::SIZE_4XL)
+    }
+    fn w_5xl(self) -> Self {
+        self.width(spacing::SIZE_5XL)
+    }
+    fn w_6xl(self) -> Self {
+        self.width(spacing::SIZE_6XL)
+    }
+    fn w_7xl(self) -> Self {
+        self.width(spacing::SIZE_7XL)
+    }
 
     // Percentage widths
-    fn w_full(self) -> Self { self.width(Pct(100.0)) }
-    fn w_auto(self) -> Self { self.width(PxPctAuto::Auto) }
+    fn w_full(self) -> Self {
+        self.width(Pct(100.0))
+    }
+    fn w_auto(self) -> Self {
+        self.width(PxPctAuto::Auto)
+    }
     // Fractional widths (GPUI-style)
-    fn w_1_2(self) -> Self { self.width(Pct(50.0)) }
-    fn w_1_3(self) -> Self { self.width(Pct(33.333333)) }
-    fn w_2_3(self) -> Self { self.width(Pct(66.666667)) }
-    fn w_1_4(self) -> Self { self.width(Pct(25.0)) }
-    fn w_3_4(self) -> Self { self.width(Pct(75.0)) }
-    fn w_1_5(self) -> Self { self.width(Pct(20.0)) }
-    fn w_2_5(self) -> Self { self.width(Pct(40.0)) }
-    fn w_3_5(self) -> Self { self.width(Pct(60.0)) }
-    fn w_4_5(self) -> Self { self.width(Pct(80.0)) }
-    fn w_1_6(self) -> Self { self.width(Pct(16.666667)) }
-    fn w_5_6(self) -> Self { self.width(Pct(83.333333)) }
-    fn w_1_12(self) -> Self { self.width(Pct(8.333333)) }
+    fn w_1_2(self) -> Self {
+        self.width(Pct(50.0))
+    }
+    fn w_1_3(self) -> Self {
+        self.width(Pct(33.333333))
+    }
+    fn w_2_3(self) -> Self {
+        self.width(Pct(66.666667))
+    }
+    fn w_1_4(self) -> Self {
+        self.width(Pct(25.0))
+    }
+    fn w_3_4(self) -> Self {
+        self.width(Pct(75.0))
+    }
+    fn w_1_5(self) -> Self {
+        self.width(Pct(20.0))
+    }
+    fn w_2_5(self) -> Self {
+        self.width(Pct(40.0))
+    }
+    fn w_3_5(self) -> Self {
+        self.width(Pct(60.0))
+    }
+    fn w_4_5(self) -> Self {
+        self.width(Pct(80.0))
+    }
+    fn w_1_6(self) -> Self {
+        self.width(Pct(16.666667))
+    }
+    fn w_5_6(self) -> Self {
+        self.width(Pct(83.333333))
+    }
+    fn w_1_12(self) -> Self {
+        self.width(Pct(8.333333))
+    }
 
     // === Height Implementations ===
     impl_height_methods! {
@@ -1513,34 +1563,84 @@ impl TailwindExt for Style {
     }
 
     // Named height sizes
-    fn h_xs(self) -> Self { self.height(spacing::SIZE_XS) }
-    fn h_sm(self) -> Self { self.height(spacing::SIZE_SM) }
-    fn h_md(self) -> Self { self.height(spacing::SIZE_MD) }
-    fn h_lg(self) -> Self { self.height(spacing::SIZE_LG) }
-    fn h_xl(self) -> Self { self.height(spacing::SIZE_XL) }
-    fn h_2xl(self) -> Self { self.height(spacing::SIZE_2XL) }
-    fn h_3xl(self) -> Self { self.height(spacing::SIZE_3XL) }
-    fn h_4xl(self) -> Self { self.height(spacing::SIZE_4XL) }
-    fn h_5xl(self) -> Self { self.height(spacing::SIZE_5XL) }
-    fn h_6xl(self) -> Self { self.height(spacing::SIZE_6XL) }
-    fn h_7xl(self) -> Self { self.height(spacing::SIZE_7XL) }
+    fn h_xs(self) -> Self {
+        self.height(spacing::SIZE_XS)
+    }
+    fn h_sm(self) -> Self {
+        self.height(spacing::SIZE_SM)
+    }
+    fn h_md(self) -> Self {
+        self.height(spacing::SIZE_MD)
+    }
+    fn h_lg(self) -> Self {
+        self.height(spacing::SIZE_LG)
+    }
+    fn h_xl(self) -> Self {
+        self.height(spacing::SIZE_XL)
+    }
+    fn h_2xl(self) -> Self {
+        self.height(spacing::SIZE_2XL)
+    }
+    fn h_3xl(self) -> Self {
+        self.height(spacing::SIZE_3XL)
+    }
+    fn h_4xl(self) -> Self {
+        self.height(spacing::SIZE_4XL)
+    }
+    fn h_5xl(self) -> Self {
+        self.height(spacing::SIZE_5XL)
+    }
+    fn h_6xl(self) -> Self {
+        self.height(spacing::SIZE_6XL)
+    }
+    fn h_7xl(self) -> Self {
+        self.height(spacing::SIZE_7XL)
+    }
 
     // Percentage heights
-    fn h_full(self) -> Self { self.height(Pct(100.0)) }
-    fn h_auto(self) -> Self { self.height(PxPctAuto::Auto) }
+    fn h_full(self) -> Self {
+        self.height(Pct(100.0))
+    }
+    fn h_auto(self) -> Self {
+        self.height(PxPctAuto::Auto)
+    }
     // Fractional heights (GPUI-style)
-    fn h_1_2(self) -> Self { self.height(Pct(50.0)) }
-    fn h_1_3(self) -> Self { self.height(Pct(33.333333)) }
-    fn h_2_3(self) -> Self { self.height(Pct(66.666667)) }
-    fn h_1_4(self) -> Self { self.height(Pct(25.0)) }
-    fn h_3_4(self) -> Self { self.height(Pct(75.0)) }
-    fn h_1_5(self) -> Self { self.height(Pct(20.0)) }
-    fn h_2_5(self) -> Self { self.height(Pct(40.0)) }
-    fn h_3_5(self) -> Self { self.height(Pct(60.0)) }
-    fn h_4_5(self) -> Self { self.height(Pct(80.0)) }
-    fn h_1_6(self) -> Self { self.height(Pct(16.666667)) }
-    fn h_5_6(self) -> Self { self.height(Pct(83.333333)) }
-    fn h_1_12(self) -> Self { self.height(Pct(8.333333)) }
+    fn h_1_2(self) -> Self {
+        self.height(Pct(50.0))
+    }
+    fn h_1_3(self) -> Self {
+        self.height(Pct(33.333333))
+    }
+    fn h_2_3(self) -> Self {
+        self.height(Pct(66.666667))
+    }
+    fn h_1_4(self) -> Self {
+        self.height(Pct(25.0))
+    }
+    fn h_3_4(self) -> Self {
+        self.height(Pct(75.0))
+    }
+    fn h_1_5(self) -> Self {
+        self.height(Pct(20.0))
+    }
+    fn h_2_5(self) -> Self {
+        self.height(Pct(40.0))
+    }
+    fn h_3_5(self) -> Self {
+        self.height(Pct(60.0))
+    }
+    fn h_4_5(self) -> Self {
+        self.height(Pct(80.0))
+    }
+    fn h_1_6(self) -> Self {
+        self.height(Pct(16.666667))
+    }
+    fn h_5_6(self) -> Self {
+        self.height(Pct(83.333333))
+    }
+    fn h_1_12(self) -> Self {
+        self.height(Pct(8.333333))
+    }
 
     // === Size Implementations (width + height) ===
     impl_size_methods! {
@@ -1594,12 +1694,24 @@ impl TailwindExt for Style {
         min_w_64 => spacing::SPACING_64,
         min_w_96 => spacing::SPACING_96,
     }
-    fn min_w_full(self) -> Self { self.min_width(Pct(100.0)) }
-    fn min_w_xs(self) -> Self { self.min_width(spacing::SIZE_XS) }
-    fn min_w_sm(self) -> Self { self.min_width(spacing::SIZE_SM) }
-    fn min_w_md(self) -> Self { self.min_width(spacing::SIZE_MD) }
-    fn min_w_lg(self) -> Self { self.min_width(spacing::SIZE_LG) }
-    fn min_w_xl(self) -> Self { self.min_width(spacing::SIZE_XL) }
+    fn min_w_full(self) -> Self {
+        self.min_width(Pct(100.0))
+    }
+    fn min_w_xs(self) -> Self {
+        self.min_width(spacing::SIZE_XS)
+    }
+    fn min_w_sm(self) -> Self {
+        self.min_width(spacing::SIZE_SM)
+    }
+    fn min_w_md(self) -> Self {
+        self.min_width(spacing::SIZE_MD)
+    }
+    fn min_w_lg(self) -> Self {
+        self.min_width(spacing::SIZE_LG)
+    }
+    fn min_w_xl(self) -> Self {
+        self.min_width(spacing::SIZE_XL)
+    }
 
     // === Max-Width Implementations ===
     impl_max_width_methods! {
@@ -1614,18 +1726,42 @@ impl TailwindExt for Style {
         max_w_64 => spacing::SPACING_64,
         max_w_96 => spacing::SPACING_96,
     }
-    fn max_w_full(self) -> Self { self.max_width(Pct(100.0)) }
-    fn max_w_xs(self) -> Self { self.max_width(spacing::SIZE_XS) }
-    fn max_w_sm(self) -> Self { self.max_width(spacing::SIZE_SM) }
-    fn max_w_md(self) -> Self { self.max_width(spacing::SIZE_MD) }
-    fn max_w_lg(self) -> Self { self.max_width(spacing::SIZE_LG) }
-    fn max_w_xl(self) -> Self { self.max_width(spacing::SIZE_XL) }
-    fn max_w_2xl(self) -> Self { self.max_width(spacing::SIZE_2XL) }
-    fn max_w_3xl(self) -> Self { self.max_width(spacing::SIZE_3XL) }
-    fn max_w_4xl(self) -> Self { self.max_width(spacing::SIZE_4XL) }
-    fn max_w_5xl(self) -> Self { self.max_width(spacing::SIZE_5XL) }
-    fn max_w_6xl(self) -> Self { self.max_width(spacing::SIZE_6XL) }
-    fn max_w_7xl(self) -> Self { self.max_width(spacing::SIZE_7XL) }
+    fn max_w_full(self) -> Self {
+        self.max_width(Pct(100.0))
+    }
+    fn max_w_xs(self) -> Self {
+        self.max_width(spacing::SIZE_XS)
+    }
+    fn max_w_sm(self) -> Self {
+        self.max_width(spacing::SIZE_SM)
+    }
+    fn max_w_md(self) -> Self {
+        self.max_width(spacing::SIZE_MD)
+    }
+    fn max_w_lg(self) -> Self {
+        self.max_width(spacing::SIZE_LG)
+    }
+    fn max_w_xl(self) -> Self {
+        self.max_width(spacing::SIZE_XL)
+    }
+    fn max_w_2xl(self) -> Self {
+        self.max_width(spacing::SIZE_2XL)
+    }
+    fn max_w_3xl(self) -> Self {
+        self.max_width(spacing::SIZE_3XL)
+    }
+    fn max_w_4xl(self) -> Self {
+        self.max_width(spacing::SIZE_4XL)
+    }
+    fn max_w_5xl(self) -> Self {
+        self.max_width(spacing::SIZE_5XL)
+    }
+    fn max_w_6xl(self) -> Self {
+        self.max_width(spacing::SIZE_6XL)
+    }
+    fn max_w_7xl(self) -> Self {
+        self.max_width(spacing::SIZE_7XL)
+    }
 
     // === Padding Implementations ===
     impl_padding_methods! {
@@ -1702,41 +1838,105 @@ impl TailwindExt for Style {
     }
 
     // Individual padding sides
-    fn pt_0(self) -> Self { self.padding_top(0.0) }
-    fn pt_1(self) -> Self { self.padding_top(spacing::SPACING_1) }
-    fn pt_2(self) -> Self { self.padding_top(spacing::SPACING_2) }
-    fn pt_3(self) -> Self { self.padding_top(spacing::SPACING_3) }
-    fn pt_4(self) -> Self { self.padding_top(spacing::SPACING_4) }
-    fn pt_5(self) -> Self { self.padding_top(spacing::SPACING_5) }
-    fn pt_6(self) -> Self { self.padding_top(spacing::SPACING_6) }
-    fn pt_8(self) -> Self { self.padding_top(spacing::SPACING_8) }
+    fn pt_0(self) -> Self {
+        self.padding_top(0.0)
+    }
+    fn pt_1(self) -> Self {
+        self.padding_top(spacing::SPACING_1)
+    }
+    fn pt_2(self) -> Self {
+        self.padding_top(spacing::SPACING_2)
+    }
+    fn pt_3(self) -> Self {
+        self.padding_top(spacing::SPACING_3)
+    }
+    fn pt_4(self) -> Self {
+        self.padding_top(spacing::SPACING_4)
+    }
+    fn pt_5(self) -> Self {
+        self.padding_top(spacing::SPACING_5)
+    }
+    fn pt_6(self) -> Self {
+        self.padding_top(spacing::SPACING_6)
+    }
+    fn pt_8(self) -> Self {
+        self.padding_top(spacing::SPACING_8)
+    }
 
-    fn pb_0(self) -> Self { self.padding_bottom(0.0) }
-    fn pb_1(self) -> Self { self.padding_bottom(spacing::SPACING_1) }
-    fn pb_2(self) -> Self { self.padding_bottom(spacing::SPACING_2) }
-    fn pb_3(self) -> Self { self.padding_bottom(spacing::SPACING_3) }
-    fn pb_4(self) -> Self { self.padding_bottom(spacing::SPACING_4) }
-    fn pb_5(self) -> Self { self.padding_bottom(spacing::SPACING_5) }
-    fn pb_6(self) -> Self { self.padding_bottom(spacing::SPACING_6) }
-    fn pb_8(self) -> Self { self.padding_bottom(spacing::SPACING_8) }
+    fn pb_0(self) -> Self {
+        self.padding_bottom(0.0)
+    }
+    fn pb_1(self) -> Self {
+        self.padding_bottom(spacing::SPACING_1)
+    }
+    fn pb_2(self) -> Self {
+        self.padding_bottom(spacing::SPACING_2)
+    }
+    fn pb_3(self) -> Self {
+        self.padding_bottom(spacing::SPACING_3)
+    }
+    fn pb_4(self) -> Self {
+        self.padding_bottom(spacing::SPACING_4)
+    }
+    fn pb_5(self) -> Self {
+        self.padding_bottom(spacing::SPACING_5)
+    }
+    fn pb_6(self) -> Self {
+        self.padding_bottom(spacing::SPACING_6)
+    }
+    fn pb_8(self) -> Self {
+        self.padding_bottom(spacing::SPACING_8)
+    }
 
-    fn pl_0(self) -> Self { self.padding_left(0.0) }
-    fn pl_1(self) -> Self { self.padding_left(spacing::SPACING_1) }
-    fn pl_2(self) -> Self { self.padding_left(spacing::SPACING_2) }
-    fn pl_3(self) -> Self { self.padding_left(spacing::SPACING_3) }
-    fn pl_4(self) -> Self { self.padding_left(spacing::SPACING_4) }
-    fn pl_5(self) -> Self { self.padding_left(spacing::SPACING_5) }
-    fn pl_6(self) -> Self { self.padding_left(spacing::SPACING_6) }
-    fn pl_8(self) -> Self { self.padding_left(spacing::SPACING_8) }
+    fn pl_0(self) -> Self {
+        self.padding_left(0.0)
+    }
+    fn pl_1(self) -> Self {
+        self.padding_left(spacing::SPACING_1)
+    }
+    fn pl_2(self) -> Self {
+        self.padding_left(spacing::SPACING_2)
+    }
+    fn pl_3(self) -> Self {
+        self.padding_left(spacing::SPACING_3)
+    }
+    fn pl_4(self) -> Self {
+        self.padding_left(spacing::SPACING_4)
+    }
+    fn pl_5(self) -> Self {
+        self.padding_left(spacing::SPACING_5)
+    }
+    fn pl_6(self) -> Self {
+        self.padding_left(spacing::SPACING_6)
+    }
+    fn pl_8(self) -> Self {
+        self.padding_left(spacing::SPACING_8)
+    }
 
-    fn pr_0(self) -> Self { self.padding_right(0.0) }
-    fn pr_1(self) -> Self { self.padding_right(spacing::SPACING_1) }
-    fn pr_2(self) -> Self { self.padding_right(spacing::SPACING_2) }
-    fn pr_3(self) -> Self { self.padding_right(spacing::SPACING_3) }
-    fn pr_4(self) -> Self { self.padding_right(spacing::SPACING_4) }
-    fn pr_5(self) -> Self { self.padding_right(spacing::SPACING_5) }
-    fn pr_6(self) -> Self { self.padding_right(spacing::SPACING_6) }
-    fn pr_8(self) -> Self { self.padding_right(spacing::SPACING_8) }
+    fn pr_0(self) -> Self {
+        self.padding_right(0.0)
+    }
+    fn pr_1(self) -> Self {
+        self.padding_right(spacing::SPACING_1)
+    }
+    fn pr_2(self) -> Self {
+        self.padding_right(spacing::SPACING_2)
+    }
+    fn pr_3(self) -> Self {
+        self.padding_right(spacing::SPACING_3)
+    }
+    fn pr_4(self) -> Self {
+        self.padding_right(spacing::SPACING_4)
+    }
+    fn pr_5(self) -> Self {
+        self.padding_right(spacing::SPACING_5)
+    }
+    fn pr_6(self) -> Self {
+        self.padding_right(spacing::SPACING_6)
+    }
+    fn pr_8(self) -> Self {
+        self.padding_right(spacing::SPACING_8)
+    }
 
     // === Margin Implementations ===
     impl_margin_methods! {
@@ -1764,7 +1964,9 @@ impl TailwindExt for Style {
         m_24 => spacing::SPACING_24,
     }
 
-    fn m_auto(self) -> Self { self.margin(PxPctAuto::Auto) }
+    fn m_auto(self) -> Self {
+        self.margin(PxPctAuto::Auto)
+    }
 
     // Horizontal margin
     impl_margin_x_methods! {
@@ -1788,7 +1990,9 @@ impl TailwindExt for Style {
         mx_24 => spacing::SPACING_24,
     }
 
-    fn mx_auto(self) -> Self { self.margin_horiz(PxPctAuto::Auto) }
+    fn mx_auto(self) -> Self {
+        self.margin_horiz(PxPctAuto::Auto)
+    }
 
     // Vertical margin
     impl_margin_y_methods! {
@@ -1812,48 +2016,122 @@ impl TailwindExt for Style {
         my_24 => spacing::SPACING_24,
     }
 
-    fn my_auto(self) -> Self { self.margin_vert(PxPctAuto::Auto) }
+    fn my_auto(self) -> Self {
+        self.margin_vert(PxPctAuto::Auto)
+    }
 
     // Individual margin sides
-    fn mt_0(self) -> Self { self.margin_top(0.0) }
-    fn mt_1(self) -> Self { self.margin_top(spacing::SPACING_1) }
-    fn mt_2(self) -> Self { self.margin_top(spacing::SPACING_2) }
-    fn mt_3(self) -> Self { self.margin_top(spacing::SPACING_3) }
-    fn mt_4(self) -> Self { self.margin_top(spacing::SPACING_4) }
-    fn mt_5(self) -> Self { self.margin_top(spacing::SPACING_5) }
-    fn mt_6(self) -> Self { self.margin_top(spacing::SPACING_6) }
-    fn mt_8(self) -> Self { self.margin_top(spacing::SPACING_8) }
-    fn mt_auto(self) -> Self { self.margin_top(PxPctAuto::Auto) }
+    fn mt_0(self) -> Self {
+        self.margin_top(0.0)
+    }
+    fn mt_1(self) -> Self {
+        self.margin_top(spacing::SPACING_1)
+    }
+    fn mt_2(self) -> Self {
+        self.margin_top(spacing::SPACING_2)
+    }
+    fn mt_3(self) -> Self {
+        self.margin_top(spacing::SPACING_3)
+    }
+    fn mt_4(self) -> Self {
+        self.margin_top(spacing::SPACING_4)
+    }
+    fn mt_5(self) -> Self {
+        self.margin_top(spacing::SPACING_5)
+    }
+    fn mt_6(self) -> Self {
+        self.margin_top(spacing::SPACING_6)
+    }
+    fn mt_8(self) -> Self {
+        self.margin_top(spacing::SPACING_8)
+    }
+    fn mt_auto(self) -> Self {
+        self.margin_top(PxPctAuto::Auto)
+    }
 
-    fn mb_0(self) -> Self { self.margin_bottom(0.0) }
-    fn mb_1(self) -> Self { self.margin_bottom(spacing::SPACING_1) }
-    fn mb_2(self) -> Self { self.margin_bottom(spacing::SPACING_2) }
-    fn mb_3(self) -> Self { self.margin_bottom(spacing::SPACING_3) }
-    fn mb_4(self) -> Self { self.margin_bottom(spacing::SPACING_4) }
-    fn mb_5(self) -> Self { self.margin_bottom(spacing::SPACING_5) }
-    fn mb_6(self) -> Self { self.margin_bottom(spacing::SPACING_6) }
-    fn mb_8(self) -> Self { self.margin_bottom(spacing::SPACING_8) }
-    fn mb_auto(self) -> Self { self.margin_bottom(PxPctAuto::Auto) }
+    fn mb_0(self) -> Self {
+        self.margin_bottom(0.0)
+    }
+    fn mb_1(self) -> Self {
+        self.margin_bottom(spacing::SPACING_1)
+    }
+    fn mb_2(self) -> Self {
+        self.margin_bottom(spacing::SPACING_2)
+    }
+    fn mb_3(self) -> Self {
+        self.margin_bottom(spacing::SPACING_3)
+    }
+    fn mb_4(self) -> Self {
+        self.margin_bottom(spacing::SPACING_4)
+    }
+    fn mb_5(self) -> Self {
+        self.margin_bottom(spacing::SPACING_5)
+    }
+    fn mb_6(self) -> Self {
+        self.margin_bottom(spacing::SPACING_6)
+    }
+    fn mb_8(self) -> Self {
+        self.margin_bottom(spacing::SPACING_8)
+    }
+    fn mb_auto(self) -> Self {
+        self.margin_bottom(PxPctAuto::Auto)
+    }
 
-    fn ml_0(self) -> Self { self.margin_left(0.0) }
-    fn ml_1(self) -> Self { self.margin_left(spacing::SPACING_1) }
-    fn ml_2(self) -> Self { self.margin_left(spacing::SPACING_2) }
-    fn ml_3(self) -> Self { self.margin_left(spacing::SPACING_3) }
-    fn ml_4(self) -> Self { self.margin_left(spacing::SPACING_4) }
-    fn ml_5(self) -> Self { self.margin_left(spacing::SPACING_5) }
-    fn ml_6(self) -> Self { self.margin_left(spacing::SPACING_6) }
-    fn ml_8(self) -> Self { self.margin_left(spacing::SPACING_8) }
-    fn ml_auto(self) -> Self { self.margin_left(PxPctAuto::Auto) }
+    fn ml_0(self) -> Self {
+        self.margin_left(0.0)
+    }
+    fn ml_1(self) -> Self {
+        self.margin_left(spacing::SPACING_1)
+    }
+    fn ml_2(self) -> Self {
+        self.margin_left(spacing::SPACING_2)
+    }
+    fn ml_3(self) -> Self {
+        self.margin_left(spacing::SPACING_3)
+    }
+    fn ml_4(self) -> Self {
+        self.margin_left(spacing::SPACING_4)
+    }
+    fn ml_5(self) -> Self {
+        self.margin_left(spacing::SPACING_5)
+    }
+    fn ml_6(self) -> Self {
+        self.margin_left(spacing::SPACING_6)
+    }
+    fn ml_8(self) -> Self {
+        self.margin_left(spacing::SPACING_8)
+    }
+    fn ml_auto(self) -> Self {
+        self.margin_left(PxPctAuto::Auto)
+    }
 
-    fn mr_0(self) -> Self { self.margin_right(0.0) }
-    fn mr_1(self) -> Self { self.margin_right(spacing::SPACING_1) }
-    fn mr_2(self) -> Self { self.margin_right(spacing::SPACING_2) }
-    fn mr_3(self) -> Self { self.margin_right(spacing::SPACING_3) }
-    fn mr_4(self) -> Self { self.margin_right(spacing::SPACING_4) }
-    fn mr_5(self) -> Self { self.margin_right(spacing::SPACING_5) }
-    fn mr_6(self) -> Self { self.margin_right(spacing::SPACING_6) }
-    fn mr_8(self) -> Self { self.margin_right(spacing::SPACING_8) }
-    fn mr_auto(self) -> Self { self.margin_right(PxPctAuto::Auto) }
+    fn mr_0(self) -> Self {
+        self.margin_right(0.0)
+    }
+    fn mr_1(self) -> Self {
+        self.margin_right(spacing::SPACING_1)
+    }
+    fn mr_2(self) -> Self {
+        self.margin_right(spacing::SPACING_2)
+    }
+    fn mr_3(self) -> Self {
+        self.margin_right(spacing::SPACING_3)
+    }
+    fn mr_4(self) -> Self {
+        self.margin_right(spacing::SPACING_4)
+    }
+    fn mr_5(self) -> Self {
+        self.margin_right(spacing::SPACING_5)
+    }
+    fn mr_6(self) -> Self {
+        self.margin_right(spacing::SPACING_6)
+    }
+    fn mr_8(self) -> Self {
+        self.margin_right(spacing::SPACING_8)
+    }
+    fn mr_auto(self) -> Self {
+        self.margin_right(PxPctAuto::Auto)
+    }
 
     // === Gap Implementations ===
     impl_gap_methods! {
@@ -1895,224 +2173,616 @@ impl TailwindExt for Style {
     }
 
     // === Border Width Implementations ===
-    fn border_0(self) -> Self { self.border(0.0) }
-    fn border_1(self) -> Self { self.border(1.0) }
-    fn border_2(self) -> Self { self.border(2.0) }
-    fn border_4(self) -> Self { self.border(4.0) }
-    fn border_8(self) -> Self { self.border(8.0) }
+    fn border_0(self) -> Self {
+        self.border(0.0)
+    }
+    fn border_1(self) -> Self {
+        self.border(1.0)
+    }
+    fn border_2(self) -> Self {
+        self.border(2.0)
+    }
+    fn border_4(self) -> Self {
+        self.border(4.0)
+    }
+    fn border_8(self) -> Self {
+        self.border(8.0)
+    }
 
     // === Shadow Implementations ===
-    fn shadow_sm(self) -> Self { self.apply_box_shadows(vec![shadow::shadow_sm()]) }
-    fn shadow(self) -> Self { self.apply_box_shadows(vec![shadow::shadow_default()]) }
-    fn shadow_md(self) -> Self { self.apply_box_shadows(vec![shadow::shadow_md()]) }
-    fn shadow_lg(self) -> Self { self.apply_box_shadows(vec![shadow::shadow_lg()]) }
-    fn shadow_xl(self) -> Self { self.apply_box_shadows(vec![shadow::shadow_xl()]) }
-    fn shadow_2xl(self) -> Self { self.apply_box_shadows(vec![shadow::shadow_2xl()]) }
-    fn shadow_none(self) -> Self { self.apply_box_shadows(vec![]) }
+    fn shadow_sm(self) -> Self {
+        self.apply_box_shadows(vec![shadow::shadow_sm()])
+    }
+    fn shadow(self) -> Self {
+        self.apply_box_shadows(vec![shadow::shadow_default()])
+    }
+    fn shadow_md(self) -> Self {
+        self.apply_box_shadows(vec![shadow::shadow_md()])
+    }
+    fn shadow_lg(self) -> Self {
+        self.apply_box_shadows(vec![shadow::shadow_lg()])
+    }
+    fn shadow_xl(self) -> Self {
+        self.apply_box_shadows(vec![shadow::shadow_xl()])
+    }
+    fn shadow_2xl(self) -> Self {
+        self.apply_box_shadows(vec![shadow::shadow_2xl()])
+    }
+    fn shadow_none(self) -> Self {
+        self.apply_box_shadows(vec![])
+    }
 
     // === Background Color Implementations ===
-    fn bg(self, color: impl Into<Color>) -> Self { self.background(color.into()) }
-    fn bg_transparent(self) -> Self { self.background(colors::TRANSPARENT) }
-    fn bg_black(self) -> Self { self.background(colors::BLACK) }
-    fn bg_white(self) -> Self { self.background(colors::WHITE) }
+    fn bg(self, color: impl Into<Color>) -> Self {
+        self.background(color.into())
+    }
+    fn bg_transparent(self) -> Self {
+        self.background(colors::TRANSPARENT)
+    }
+    fn bg_black(self) -> Self {
+        self.background(colors::BLACK)
+    }
+    fn bg_white(self) -> Self {
+        self.background(colors::WHITE)
+    }
     // Slate
-    fn bg_slate_50(self) -> Self { self.background(colors::slate::C50) }
-    fn bg_slate_100(self) -> Self { self.background(colors::slate::C100) }
-    fn bg_slate_200(self) -> Self { self.background(colors::slate::C200) }
-    fn bg_slate_300(self) -> Self { self.background(colors::slate::C300) }
-    fn bg_slate_400(self) -> Self { self.background(colors::slate::C400) }
-    fn bg_slate_500(self) -> Self { self.background(colors::slate::C500) }
-    fn bg_slate_600(self) -> Self { self.background(colors::slate::C600) }
-    fn bg_slate_700(self) -> Self { self.background(colors::slate::C700) }
-    fn bg_slate_800(self) -> Self { self.background(colors::slate::C800) }
-    fn bg_slate_900(self) -> Self { self.background(colors::slate::C900) }
-    fn bg_slate_950(self) -> Self { self.background(colors::slate::C950) }
+    fn bg_slate_50(self) -> Self {
+        self.background(colors::slate::C50)
+    }
+    fn bg_slate_100(self) -> Self {
+        self.background(colors::slate::C100)
+    }
+    fn bg_slate_200(self) -> Self {
+        self.background(colors::slate::C200)
+    }
+    fn bg_slate_300(self) -> Self {
+        self.background(colors::slate::C300)
+    }
+    fn bg_slate_400(self) -> Self {
+        self.background(colors::slate::C400)
+    }
+    fn bg_slate_500(self) -> Self {
+        self.background(colors::slate::C500)
+    }
+    fn bg_slate_600(self) -> Self {
+        self.background(colors::slate::C600)
+    }
+    fn bg_slate_700(self) -> Self {
+        self.background(colors::slate::C700)
+    }
+    fn bg_slate_800(self) -> Self {
+        self.background(colors::slate::C800)
+    }
+    fn bg_slate_900(self) -> Self {
+        self.background(colors::slate::C900)
+    }
+    fn bg_slate_950(self) -> Self {
+        self.background(colors::slate::C950)
+    }
     // Gray
-    fn bg_gray_50(self) -> Self { self.background(colors::gray::C50) }
-    fn bg_gray_100(self) -> Self { self.background(colors::gray::C100) }
-    fn bg_gray_200(self) -> Self { self.background(colors::gray::C200) }
-    fn bg_gray_300(self) -> Self { self.background(colors::gray::C300) }
-    fn bg_gray_400(self) -> Self { self.background(colors::gray::C400) }
-    fn bg_gray_500(self) -> Self { self.background(colors::gray::C500) }
-    fn bg_gray_600(self) -> Self { self.background(colors::gray::C600) }
-    fn bg_gray_700(self) -> Self { self.background(colors::gray::C700) }
-    fn bg_gray_800(self) -> Self { self.background(colors::gray::C800) }
-    fn bg_gray_900(self) -> Self { self.background(colors::gray::C900) }
-    fn bg_gray_950(self) -> Self { self.background(colors::gray::C950) }
+    fn bg_gray_50(self) -> Self {
+        self.background(colors::gray::C50)
+    }
+    fn bg_gray_100(self) -> Self {
+        self.background(colors::gray::C100)
+    }
+    fn bg_gray_200(self) -> Self {
+        self.background(colors::gray::C200)
+    }
+    fn bg_gray_300(self) -> Self {
+        self.background(colors::gray::C300)
+    }
+    fn bg_gray_400(self) -> Self {
+        self.background(colors::gray::C400)
+    }
+    fn bg_gray_500(self) -> Self {
+        self.background(colors::gray::C500)
+    }
+    fn bg_gray_600(self) -> Self {
+        self.background(colors::gray::C600)
+    }
+    fn bg_gray_700(self) -> Self {
+        self.background(colors::gray::C700)
+    }
+    fn bg_gray_800(self) -> Self {
+        self.background(colors::gray::C800)
+    }
+    fn bg_gray_900(self) -> Self {
+        self.background(colors::gray::C900)
+    }
+    fn bg_gray_950(self) -> Self {
+        self.background(colors::gray::C950)
+    }
     // Zinc
-    fn bg_zinc_50(self) -> Self { self.background(colors::zinc::C50) }
-    fn bg_zinc_100(self) -> Self { self.background(colors::zinc::C100) }
-    fn bg_zinc_200(self) -> Self { self.background(colors::zinc::C200) }
-    fn bg_zinc_300(self) -> Self { self.background(colors::zinc::C300) }
-    fn bg_zinc_400(self) -> Self { self.background(colors::zinc::C400) }
-    fn bg_zinc_500(self) -> Self { self.background(colors::zinc::C500) }
-    fn bg_zinc_600(self) -> Self { self.background(colors::zinc::C600) }
-    fn bg_zinc_700(self) -> Self { self.background(colors::zinc::C700) }
-    fn bg_zinc_800(self) -> Self { self.background(colors::zinc::C800) }
-    fn bg_zinc_900(self) -> Self { self.background(colors::zinc::C900) }
-    fn bg_zinc_950(self) -> Self { self.background(colors::zinc::C950) }
+    fn bg_zinc_50(self) -> Self {
+        self.background(colors::zinc::C50)
+    }
+    fn bg_zinc_100(self) -> Self {
+        self.background(colors::zinc::C100)
+    }
+    fn bg_zinc_200(self) -> Self {
+        self.background(colors::zinc::C200)
+    }
+    fn bg_zinc_300(self) -> Self {
+        self.background(colors::zinc::C300)
+    }
+    fn bg_zinc_400(self) -> Self {
+        self.background(colors::zinc::C400)
+    }
+    fn bg_zinc_500(self) -> Self {
+        self.background(colors::zinc::C500)
+    }
+    fn bg_zinc_600(self) -> Self {
+        self.background(colors::zinc::C600)
+    }
+    fn bg_zinc_700(self) -> Self {
+        self.background(colors::zinc::C700)
+    }
+    fn bg_zinc_800(self) -> Self {
+        self.background(colors::zinc::C800)
+    }
+    fn bg_zinc_900(self) -> Self {
+        self.background(colors::zinc::C900)
+    }
+    fn bg_zinc_950(self) -> Self {
+        self.background(colors::zinc::C950)
+    }
     // Red
-    fn bg_red_50(self) -> Self { self.background(colors::red::C50) }
-    fn bg_red_100(self) -> Self { self.background(colors::red::C100) }
-    fn bg_red_200(self) -> Self { self.background(colors::red::C200) }
-    fn bg_red_300(self) -> Self { self.background(colors::red::C300) }
-    fn bg_red_400(self) -> Self { self.background(colors::red::C400) }
-    fn bg_red_500(self) -> Self { self.background(colors::red::C500) }
-    fn bg_red_600(self) -> Self { self.background(colors::red::C600) }
-    fn bg_red_700(self) -> Self { self.background(colors::red::C700) }
-    fn bg_red_800(self) -> Self { self.background(colors::red::C800) }
-    fn bg_red_900(self) -> Self { self.background(colors::red::C900) }
-    fn bg_red_950(self) -> Self { self.background(colors::red::C950) }
+    fn bg_red_50(self) -> Self {
+        self.background(colors::red::C50)
+    }
+    fn bg_red_100(self) -> Self {
+        self.background(colors::red::C100)
+    }
+    fn bg_red_200(self) -> Self {
+        self.background(colors::red::C200)
+    }
+    fn bg_red_300(self) -> Self {
+        self.background(colors::red::C300)
+    }
+    fn bg_red_400(self) -> Self {
+        self.background(colors::red::C400)
+    }
+    fn bg_red_500(self) -> Self {
+        self.background(colors::red::C500)
+    }
+    fn bg_red_600(self) -> Self {
+        self.background(colors::red::C600)
+    }
+    fn bg_red_700(self) -> Self {
+        self.background(colors::red::C700)
+    }
+    fn bg_red_800(self) -> Self {
+        self.background(colors::red::C800)
+    }
+    fn bg_red_900(self) -> Self {
+        self.background(colors::red::C900)
+    }
+    fn bg_red_950(self) -> Self {
+        self.background(colors::red::C950)
+    }
     // Orange
-    fn bg_orange_50(self) -> Self { self.background(colors::orange::C50) }
-    fn bg_orange_100(self) -> Self { self.background(colors::orange::C100) }
-    fn bg_orange_200(self) -> Self { self.background(colors::orange::C200) }
-    fn bg_orange_300(self) -> Self { self.background(colors::orange::C300) }
-    fn bg_orange_400(self) -> Self { self.background(colors::orange::C400) }
-    fn bg_orange_500(self) -> Self { self.background(colors::orange::C500) }
-    fn bg_orange_600(self) -> Self { self.background(colors::orange::C600) }
-    fn bg_orange_700(self) -> Self { self.background(colors::orange::C700) }
-    fn bg_orange_800(self) -> Self { self.background(colors::orange::C800) }
-    fn bg_orange_900(self) -> Self { self.background(colors::orange::C900) }
-    fn bg_orange_950(self) -> Self { self.background(colors::orange::C950) }
+    fn bg_orange_50(self) -> Self {
+        self.background(colors::orange::C50)
+    }
+    fn bg_orange_100(self) -> Self {
+        self.background(colors::orange::C100)
+    }
+    fn bg_orange_200(self) -> Self {
+        self.background(colors::orange::C200)
+    }
+    fn bg_orange_300(self) -> Self {
+        self.background(colors::orange::C300)
+    }
+    fn bg_orange_400(self) -> Self {
+        self.background(colors::orange::C400)
+    }
+    fn bg_orange_500(self) -> Self {
+        self.background(colors::orange::C500)
+    }
+    fn bg_orange_600(self) -> Self {
+        self.background(colors::orange::C600)
+    }
+    fn bg_orange_700(self) -> Self {
+        self.background(colors::orange::C700)
+    }
+    fn bg_orange_800(self) -> Self {
+        self.background(colors::orange::C800)
+    }
+    fn bg_orange_900(self) -> Self {
+        self.background(colors::orange::C900)
+    }
+    fn bg_orange_950(self) -> Self {
+        self.background(colors::orange::C950)
+    }
     // Yellow
-    fn bg_yellow_50(self) -> Self { self.background(colors::yellow::C50) }
-    fn bg_yellow_100(self) -> Self { self.background(colors::yellow::C100) }
-    fn bg_yellow_200(self) -> Self { self.background(colors::yellow::C200) }
-    fn bg_yellow_300(self) -> Self { self.background(colors::yellow::C300) }
-    fn bg_yellow_400(self) -> Self { self.background(colors::yellow::C400) }
-    fn bg_yellow_500(self) -> Self { self.background(colors::yellow::C500) }
-    fn bg_yellow_600(self) -> Self { self.background(colors::yellow::C600) }
-    fn bg_yellow_700(self) -> Self { self.background(colors::yellow::C700) }
-    fn bg_yellow_800(self) -> Self { self.background(colors::yellow::C800) }
-    fn bg_yellow_900(self) -> Self { self.background(colors::yellow::C900) }
-    fn bg_yellow_950(self) -> Self { self.background(colors::yellow::C950) }
+    fn bg_yellow_50(self) -> Self {
+        self.background(colors::yellow::C50)
+    }
+    fn bg_yellow_100(self) -> Self {
+        self.background(colors::yellow::C100)
+    }
+    fn bg_yellow_200(self) -> Self {
+        self.background(colors::yellow::C200)
+    }
+    fn bg_yellow_300(self) -> Self {
+        self.background(colors::yellow::C300)
+    }
+    fn bg_yellow_400(self) -> Self {
+        self.background(colors::yellow::C400)
+    }
+    fn bg_yellow_500(self) -> Self {
+        self.background(colors::yellow::C500)
+    }
+    fn bg_yellow_600(self) -> Self {
+        self.background(colors::yellow::C600)
+    }
+    fn bg_yellow_700(self) -> Self {
+        self.background(colors::yellow::C700)
+    }
+    fn bg_yellow_800(self) -> Self {
+        self.background(colors::yellow::C800)
+    }
+    fn bg_yellow_900(self) -> Self {
+        self.background(colors::yellow::C900)
+    }
+    fn bg_yellow_950(self) -> Self {
+        self.background(colors::yellow::C950)
+    }
     // Green
-    fn bg_green_50(self) -> Self { self.background(colors::green::C50) }
-    fn bg_green_100(self) -> Self { self.background(colors::green::C100) }
-    fn bg_green_200(self) -> Self { self.background(colors::green::C200) }
-    fn bg_green_300(self) -> Self { self.background(colors::green::C300) }
-    fn bg_green_400(self) -> Self { self.background(colors::green::C400) }
-    fn bg_green_500(self) -> Self { self.background(colors::green::C500) }
-    fn bg_green_600(self) -> Self { self.background(colors::green::C600) }
-    fn bg_green_700(self) -> Self { self.background(colors::green::C700) }
-    fn bg_green_800(self) -> Self { self.background(colors::green::C800) }
-    fn bg_green_900(self) -> Self { self.background(colors::green::C900) }
-    fn bg_green_950(self) -> Self { self.background(colors::green::C950) }
+    fn bg_green_50(self) -> Self {
+        self.background(colors::green::C50)
+    }
+    fn bg_green_100(self) -> Self {
+        self.background(colors::green::C100)
+    }
+    fn bg_green_200(self) -> Self {
+        self.background(colors::green::C200)
+    }
+    fn bg_green_300(self) -> Self {
+        self.background(colors::green::C300)
+    }
+    fn bg_green_400(self) -> Self {
+        self.background(colors::green::C400)
+    }
+    fn bg_green_500(self) -> Self {
+        self.background(colors::green::C500)
+    }
+    fn bg_green_600(self) -> Self {
+        self.background(colors::green::C600)
+    }
+    fn bg_green_700(self) -> Self {
+        self.background(colors::green::C700)
+    }
+    fn bg_green_800(self) -> Self {
+        self.background(colors::green::C800)
+    }
+    fn bg_green_900(self) -> Self {
+        self.background(colors::green::C900)
+    }
+    fn bg_green_950(self) -> Self {
+        self.background(colors::green::C950)
+    }
     // Blue
-    fn bg_blue_50(self) -> Self { self.background(colors::blue::C50) }
-    fn bg_blue_100(self) -> Self { self.background(colors::blue::C100) }
-    fn bg_blue_200(self) -> Self { self.background(colors::blue::C200) }
-    fn bg_blue_300(self) -> Self { self.background(colors::blue::C300) }
-    fn bg_blue_400(self) -> Self { self.background(colors::blue::C400) }
-    fn bg_blue_500(self) -> Self { self.background(colors::blue::C500) }
-    fn bg_blue_600(self) -> Self { self.background(colors::blue::C600) }
-    fn bg_blue_700(self) -> Self { self.background(colors::blue::C700) }
-    fn bg_blue_800(self) -> Self { self.background(colors::blue::C800) }
-    fn bg_blue_900(self) -> Self { self.background(colors::blue::C900) }
-    fn bg_blue_950(self) -> Self { self.background(colors::blue::C950) }
+    fn bg_blue_50(self) -> Self {
+        self.background(colors::blue::C50)
+    }
+    fn bg_blue_100(self) -> Self {
+        self.background(colors::blue::C100)
+    }
+    fn bg_blue_200(self) -> Self {
+        self.background(colors::blue::C200)
+    }
+    fn bg_blue_300(self) -> Self {
+        self.background(colors::blue::C300)
+    }
+    fn bg_blue_400(self) -> Self {
+        self.background(colors::blue::C400)
+    }
+    fn bg_blue_500(self) -> Self {
+        self.background(colors::blue::C500)
+    }
+    fn bg_blue_600(self) -> Self {
+        self.background(colors::blue::C600)
+    }
+    fn bg_blue_700(self) -> Self {
+        self.background(colors::blue::C700)
+    }
+    fn bg_blue_800(self) -> Self {
+        self.background(colors::blue::C800)
+    }
+    fn bg_blue_900(self) -> Self {
+        self.background(colors::blue::C900)
+    }
+    fn bg_blue_950(self) -> Self {
+        self.background(colors::blue::C950)
+    }
     // Indigo
-    fn bg_indigo_50(self) -> Self { self.background(colors::indigo::C50) }
-    fn bg_indigo_100(self) -> Self { self.background(colors::indigo::C100) }
-    fn bg_indigo_200(self) -> Self { self.background(colors::indigo::C200) }
-    fn bg_indigo_300(self) -> Self { self.background(colors::indigo::C300) }
-    fn bg_indigo_400(self) -> Self { self.background(colors::indigo::C400) }
-    fn bg_indigo_500(self) -> Self { self.background(colors::indigo::C500) }
-    fn bg_indigo_600(self) -> Self { self.background(colors::indigo::C600) }
-    fn bg_indigo_700(self) -> Self { self.background(colors::indigo::C700) }
-    fn bg_indigo_800(self) -> Self { self.background(colors::indigo::C800) }
-    fn bg_indigo_900(self) -> Self { self.background(colors::indigo::C900) }
-    fn bg_indigo_950(self) -> Self { self.background(colors::indigo::C950) }
+    fn bg_indigo_50(self) -> Self {
+        self.background(colors::indigo::C50)
+    }
+    fn bg_indigo_100(self) -> Self {
+        self.background(colors::indigo::C100)
+    }
+    fn bg_indigo_200(self) -> Self {
+        self.background(colors::indigo::C200)
+    }
+    fn bg_indigo_300(self) -> Self {
+        self.background(colors::indigo::C300)
+    }
+    fn bg_indigo_400(self) -> Self {
+        self.background(colors::indigo::C400)
+    }
+    fn bg_indigo_500(self) -> Self {
+        self.background(colors::indigo::C500)
+    }
+    fn bg_indigo_600(self) -> Self {
+        self.background(colors::indigo::C600)
+    }
+    fn bg_indigo_700(self) -> Self {
+        self.background(colors::indigo::C700)
+    }
+    fn bg_indigo_800(self) -> Self {
+        self.background(colors::indigo::C800)
+    }
+    fn bg_indigo_900(self) -> Self {
+        self.background(colors::indigo::C900)
+    }
+    fn bg_indigo_950(self) -> Self {
+        self.background(colors::indigo::C950)
+    }
     // Purple
-    fn bg_purple_50(self) -> Self { self.background(colors::purple::C50) }
-    fn bg_purple_100(self) -> Self { self.background(colors::purple::C100) }
-    fn bg_purple_200(self) -> Self { self.background(colors::purple::C200) }
-    fn bg_purple_300(self) -> Self { self.background(colors::purple::C300) }
-    fn bg_purple_400(self) -> Self { self.background(colors::purple::C400) }
-    fn bg_purple_500(self) -> Self { self.background(colors::purple::C500) }
-    fn bg_purple_600(self) -> Self { self.background(colors::purple::C600) }
-    fn bg_purple_700(self) -> Self { self.background(colors::purple::C700) }
-    fn bg_purple_800(self) -> Self { self.background(colors::purple::C800) }
-    fn bg_purple_900(self) -> Self { self.background(colors::purple::C900) }
-    fn bg_purple_950(self) -> Self { self.background(colors::purple::C950) }
+    fn bg_purple_50(self) -> Self {
+        self.background(colors::purple::C50)
+    }
+    fn bg_purple_100(self) -> Self {
+        self.background(colors::purple::C100)
+    }
+    fn bg_purple_200(self) -> Self {
+        self.background(colors::purple::C200)
+    }
+    fn bg_purple_300(self) -> Self {
+        self.background(colors::purple::C300)
+    }
+    fn bg_purple_400(self) -> Self {
+        self.background(colors::purple::C400)
+    }
+    fn bg_purple_500(self) -> Self {
+        self.background(colors::purple::C500)
+    }
+    fn bg_purple_600(self) -> Self {
+        self.background(colors::purple::C600)
+    }
+    fn bg_purple_700(self) -> Self {
+        self.background(colors::purple::C700)
+    }
+    fn bg_purple_800(self) -> Self {
+        self.background(colors::purple::C800)
+    }
+    fn bg_purple_900(self) -> Self {
+        self.background(colors::purple::C900)
+    }
+    fn bg_purple_950(self) -> Self {
+        self.background(colors::purple::C950)
+    }
     // Pink
-    fn bg_pink_50(self) -> Self { self.background(colors::pink::C50) }
-    fn bg_pink_100(self) -> Self { self.background(colors::pink::C100) }
-    fn bg_pink_200(self) -> Self { self.background(colors::pink::C200) }
-    fn bg_pink_300(self) -> Self { self.background(colors::pink::C300) }
-    fn bg_pink_400(self) -> Self { self.background(colors::pink::C400) }
-    fn bg_pink_500(self) -> Self { self.background(colors::pink::C500) }
-    fn bg_pink_600(self) -> Self { self.background(colors::pink::C600) }
-    fn bg_pink_700(self) -> Self { self.background(colors::pink::C700) }
-    fn bg_pink_800(self) -> Self { self.background(colors::pink::C800) }
-    fn bg_pink_900(self) -> Self { self.background(colors::pink::C900) }
-    fn bg_pink_950(self) -> Self { self.background(colors::pink::C950) }
+    fn bg_pink_50(self) -> Self {
+        self.background(colors::pink::C50)
+    }
+    fn bg_pink_100(self) -> Self {
+        self.background(colors::pink::C100)
+    }
+    fn bg_pink_200(self) -> Self {
+        self.background(colors::pink::C200)
+    }
+    fn bg_pink_300(self) -> Self {
+        self.background(colors::pink::C300)
+    }
+    fn bg_pink_400(self) -> Self {
+        self.background(colors::pink::C400)
+    }
+    fn bg_pink_500(self) -> Self {
+        self.background(colors::pink::C500)
+    }
+    fn bg_pink_600(self) -> Self {
+        self.background(colors::pink::C600)
+    }
+    fn bg_pink_700(self) -> Self {
+        self.background(colors::pink::C700)
+    }
+    fn bg_pink_800(self) -> Self {
+        self.background(colors::pink::C800)
+    }
+    fn bg_pink_900(self) -> Self {
+        self.background(colors::pink::C900)
+    }
+    fn bg_pink_950(self) -> Self {
+        self.background(colors::pink::C950)
+    }
 
     // === Text Color Implementations ===
-    fn text(self, color: impl Into<Color>) -> Self { self.color(color.into()) }
-    fn text_transparent(self) -> Self { self.color(colors::TRANSPARENT) }
-    fn text_black(self) -> Self { self.color(colors::BLACK) }
-    fn text_white(self) -> Self { self.color(colors::WHITE) }
+    fn text(self, color: impl Into<Color>) -> Self {
+        self.color(color.into())
+    }
+    fn text_transparent(self) -> Self {
+        self.color(colors::TRANSPARENT)
+    }
+    fn text_black(self) -> Self {
+        self.color(colors::BLACK)
+    }
+    fn text_white(self) -> Self {
+        self.color(colors::WHITE)
+    }
     // Slate
-    fn text_slate_50(self) -> Self { self.color(colors::slate::C50) }
-    fn text_slate_100(self) -> Self { self.color(colors::slate::C100) }
-    fn text_slate_200(self) -> Self { self.color(colors::slate::C200) }
-    fn text_slate_300(self) -> Self { self.color(colors::slate::C300) }
-    fn text_slate_400(self) -> Self { self.color(colors::slate::C400) }
-    fn text_slate_500(self) -> Self { self.color(colors::slate::C500) }
-    fn text_slate_600(self) -> Self { self.color(colors::slate::C600) }
-    fn text_slate_700(self) -> Self { self.color(colors::slate::C700) }
-    fn text_slate_800(self) -> Self { self.color(colors::slate::C800) }
-    fn text_slate_900(self) -> Self { self.color(colors::slate::C900) }
-    fn text_slate_950(self) -> Self { self.color(colors::slate::C950) }
+    fn text_slate_50(self) -> Self {
+        self.color(colors::slate::C50)
+    }
+    fn text_slate_100(self) -> Self {
+        self.color(colors::slate::C100)
+    }
+    fn text_slate_200(self) -> Self {
+        self.color(colors::slate::C200)
+    }
+    fn text_slate_300(self) -> Self {
+        self.color(colors::slate::C300)
+    }
+    fn text_slate_400(self) -> Self {
+        self.color(colors::slate::C400)
+    }
+    fn text_slate_500(self) -> Self {
+        self.color(colors::slate::C500)
+    }
+    fn text_slate_600(self) -> Self {
+        self.color(colors::slate::C600)
+    }
+    fn text_slate_700(self) -> Self {
+        self.color(colors::slate::C700)
+    }
+    fn text_slate_800(self) -> Self {
+        self.color(colors::slate::C800)
+    }
+    fn text_slate_900(self) -> Self {
+        self.color(colors::slate::C900)
+    }
+    fn text_slate_950(self) -> Self {
+        self.color(colors::slate::C950)
+    }
     // Gray
-    fn text_gray_50(self) -> Self { self.color(colors::gray::C50) }
-    fn text_gray_100(self) -> Self { self.color(colors::gray::C100) }
-    fn text_gray_200(self) -> Self { self.color(colors::gray::C200) }
-    fn text_gray_300(self) -> Self { self.color(colors::gray::C300) }
-    fn text_gray_400(self) -> Self { self.color(colors::gray::C400) }
-    fn text_gray_500(self) -> Self { self.color(colors::gray::C500) }
-    fn text_gray_600(self) -> Self { self.color(colors::gray::C600) }
-    fn text_gray_700(self) -> Self { self.color(colors::gray::C700) }
-    fn text_gray_800(self) -> Self { self.color(colors::gray::C800) }
-    fn text_gray_900(self) -> Self { self.color(colors::gray::C900) }
-    fn text_gray_950(self) -> Self { self.color(colors::gray::C950) }
+    fn text_gray_50(self) -> Self {
+        self.color(colors::gray::C50)
+    }
+    fn text_gray_100(self) -> Self {
+        self.color(colors::gray::C100)
+    }
+    fn text_gray_200(self) -> Self {
+        self.color(colors::gray::C200)
+    }
+    fn text_gray_300(self) -> Self {
+        self.color(colors::gray::C300)
+    }
+    fn text_gray_400(self) -> Self {
+        self.color(colors::gray::C400)
+    }
+    fn text_gray_500(self) -> Self {
+        self.color(colors::gray::C500)
+    }
+    fn text_gray_600(self) -> Self {
+        self.color(colors::gray::C600)
+    }
+    fn text_gray_700(self) -> Self {
+        self.color(colors::gray::C700)
+    }
+    fn text_gray_800(self) -> Self {
+        self.color(colors::gray::C800)
+    }
+    fn text_gray_900(self) -> Self {
+        self.color(colors::gray::C900)
+    }
+    fn text_gray_950(self) -> Self {
+        self.color(colors::gray::C950)
+    }
     // Red
-    fn text_red_50(self) -> Self { self.color(colors::red::C50) }
-    fn text_red_100(self) -> Self { self.color(colors::red::C100) }
-    fn text_red_200(self) -> Self { self.color(colors::red::C200) }
-    fn text_red_300(self) -> Self { self.color(colors::red::C300) }
-    fn text_red_400(self) -> Self { self.color(colors::red::C400) }
-    fn text_red_500(self) -> Self { self.color(colors::red::C500) }
-    fn text_red_600(self) -> Self { self.color(colors::red::C600) }
-    fn text_red_700(self) -> Self { self.color(colors::red::C700) }
-    fn text_red_800(self) -> Self { self.color(colors::red::C800) }
-    fn text_red_900(self) -> Self { self.color(colors::red::C900) }
-    fn text_red_950(self) -> Self { self.color(colors::red::C950) }
+    fn text_red_50(self) -> Self {
+        self.color(colors::red::C50)
+    }
+    fn text_red_100(self) -> Self {
+        self.color(colors::red::C100)
+    }
+    fn text_red_200(self) -> Self {
+        self.color(colors::red::C200)
+    }
+    fn text_red_300(self) -> Self {
+        self.color(colors::red::C300)
+    }
+    fn text_red_400(self) -> Self {
+        self.color(colors::red::C400)
+    }
+    fn text_red_500(self) -> Self {
+        self.color(colors::red::C500)
+    }
+    fn text_red_600(self) -> Self {
+        self.color(colors::red::C600)
+    }
+    fn text_red_700(self) -> Self {
+        self.color(colors::red::C700)
+    }
+    fn text_red_800(self) -> Self {
+        self.color(colors::red::C800)
+    }
+    fn text_red_900(self) -> Self {
+        self.color(colors::red::C900)
+    }
+    fn text_red_950(self) -> Self {
+        self.color(colors::red::C950)
+    }
     // Green
-    fn text_green_50(self) -> Self { self.color(colors::green::C50) }
-    fn text_green_100(self) -> Self { self.color(colors::green::C100) }
-    fn text_green_200(self) -> Self { self.color(colors::green::C200) }
-    fn text_green_300(self) -> Self { self.color(colors::green::C300) }
-    fn text_green_400(self) -> Self { self.color(colors::green::C400) }
-    fn text_green_500(self) -> Self { self.color(colors::green::C500) }
-    fn text_green_600(self) -> Self { self.color(colors::green::C600) }
-    fn text_green_700(self) -> Self { self.color(colors::green::C700) }
-    fn text_green_800(self) -> Self { self.color(colors::green::C800) }
-    fn text_green_900(self) -> Self { self.color(colors::green::C900) }
-    fn text_green_950(self) -> Self { self.color(colors::green::C950) }
+    fn text_green_50(self) -> Self {
+        self.color(colors::green::C50)
+    }
+    fn text_green_100(self) -> Self {
+        self.color(colors::green::C100)
+    }
+    fn text_green_200(self) -> Self {
+        self.color(colors::green::C200)
+    }
+    fn text_green_300(self) -> Self {
+        self.color(colors::green::C300)
+    }
+    fn text_green_400(self) -> Self {
+        self.color(colors::green::C400)
+    }
+    fn text_green_500(self) -> Self {
+        self.color(colors::green::C500)
+    }
+    fn text_green_600(self) -> Self {
+        self.color(colors::green::C600)
+    }
+    fn text_green_700(self) -> Self {
+        self.color(colors::green::C700)
+    }
+    fn text_green_800(self) -> Self {
+        self.color(colors::green::C800)
+    }
+    fn text_green_900(self) -> Self {
+        self.color(colors::green::C900)
+    }
+    fn text_green_950(self) -> Self {
+        self.color(colors::green::C950)
+    }
     // Blue
-    fn text_blue_50(self) -> Self { self.color(colors::blue::C50) }
-    fn text_blue_100(self) -> Self { self.color(colors::blue::C100) }
-    fn text_blue_200(self) -> Self { self.color(colors::blue::C200) }
-    fn text_blue_300(self) -> Self { self.color(colors::blue::C300) }
-    fn text_blue_400(self) -> Self { self.color(colors::blue::C400) }
-    fn text_blue_500(self) -> Self { self.color(colors::blue::C500) }
-    fn text_blue_600(self) -> Self { self.color(colors::blue::C600) }
-    fn text_blue_700(self) -> Self { self.color(colors::blue::C700) }
-    fn text_blue_800(self) -> Self { self.color(colors::blue::C800) }
-    fn text_blue_900(self) -> Self { self.color(colors::blue::C900) }
-    fn text_blue_950(self) -> Self { self.color(colors::blue::C950) }
+    fn text_blue_50(self) -> Self {
+        self.color(colors::blue::C50)
+    }
+    fn text_blue_100(self) -> Self {
+        self.color(colors::blue::C100)
+    }
+    fn text_blue_200(self) -> Self {
+        self.color(colors::blue::C200)
+    }
+    fn text_blue_300(self) -> Self {
+        self.color(colors::blue::C300)
+    }
+    fn text_blue_400(self) -> Self {
+        self.color(colors::blue::C400)
+    }
+    fn text_blue_500(self) -> Self {
+        self.color(colors::blue::C500)
+    }
+    fn text_blue_600(self) -> Self {
+        self.color(colors::blue::C600)
+    }
+    fn text_blue_700(self) -> Self {
+        self.color(colors::blue::C700)
+    }
+    fn text_blue_800(self) -> Self {
+        self.color(colors::blue::C800)
+    }
+    fn text_blue_900(self) -> Self {
+        self.color(colors::blue::C900)
+    }
+    fn text_blue_950(self) -> Self {
+        self.color(colors::blue::C950)
+    }
 
     // === Font Size Implementations ===
     impl_font_size_methods! {
@@ -2155,85 +2825,211 @@ impl TailwindExt for Style {
     }
 
     // === Display Implementations ===
-    fn flex(self) -> Self { self.display(floem::style::Display::Flex) }
-    fn block(self) -> Self { self.display(floem::style::Display::Block) }
-    fn grid(self) -> Self { self.display(floem::style::Display::Grid) }
-    fn hidden(self) -> Self { self.display(floem::style::Display::None) }
+    fn flex(self) -> Self {
+        self.display(floem::style::Display::Flex)
+    }
+    fn block(self) -> Self {
+        self.display(floem::style::Display::Block)
+    }
+    fn grid(self) -> Self {
+        self.display(floem::style::Display::Grid)
+    }
+    fn hidden(self) -> Self {
+        self.display(floem::style::Display::None)
+    }
 
     // === Flex Direction Implementations ===
-    fn flex_row(self) -> Self { self.flex_direction(floem::style::FlexDirection::Row) }
-    fn flex_col(self) -> Self { self.flex_direction(floem::style::FlexDirection::Column) }
-    fn flex_row_reverse(self) -> Self { self.flex_direction(floem::style::FlexDirection::RowReverse) }
-    fn flex_col_reverse(self) -> Self { self.flex_direction(floem::style::FlexDirection::ColumnReverse) }
+    fn flex_row(self) -> Self {
+        self.flex_direction(floem::style::FlexDirection::Row)
+    }
+    fn flex_col(self) -> Self {
+        self.flex_direction(floem::style::FlexDirection::Column)
+    }
+    fn flex_row_reverse(self) -> Self {
+        self.flex_direction(floem::style::FlexDirection::RowReverse)
+    }
+    fn flex_col_reverse(self) -> Self {
+        self.flex_direction(floem::style::FlexDirection::ColumnReverse)
+    }
 
     // === Flex Wrap Implementations ===
-    fn wrap(self) -> Self { self.flex_wrap(floem::style::FlexWrap::Wrap) }
-    fn nowrap(self) -> Self { self.flex_wrap(floem::style::FlexWrap::NoWrap) }
-    fn wrap_reverse(self) -> Self { self.flex_wrap(floem::style::FlexWrap::WrapReverse) }
+    fn wrap(self) -> Self {
+        self.flex_wrap(floem::style::FlexWrap::Wrap)
+    }
+    fn nowrap(self) -> Self {
+        self.flex_wrap(floem::style::FlexWrap::NoWrap)
+    }
+    fn wrap_reverse(self) -> Self {
+        self.flex_wrap(floem::style::FlexWrap::WrapReverse)
+    }
 
     // === Cursor Implementations ===
-    fn cursor_pointer(self) -> Self { self.cursor(floem::style::CursorStyle::Pointer) }
-    fn cursor_default(self) -> Self { self.cursor(floem::style::CursorStyle::Default) }
-    fn cursor_text(self) -> Self { self.cursor(floem::style::CursorStyle::Text) }
-    fn cursor_move(self) -> Self { self.cursor(floem::style::CursorStyle::Move) }
-    fn cursor_grab(self) -> Self { self.cursor(floem::style::CursorStyle::Grab) }
-    fn cursor_grabbing(self) -> Self { self.cursor(floem::style::CursorStyle::Grabbing) }
+    fn cursor_pointer(self) -> Self {
+        self.cursor(floem::style::CursorStyle::Pointer)
+    }
+    fn cursor_default(self) -> Self {
+        self.cursor(floem::style::CursorStyle::Default)
+    }
+    fn cursor_text(self) -> Self {
+        self.cursor(floem::style::CursorStyle::Text)
+    }
+    fn cursor_move(self) -> Self {
+        self.cursor(floem::style::CursorStyle::Move)
+    }
+    fn cursor_grab(self) -> Self {
+        self.cursor(floem::style::CursorStyle::Grab)
+    }
+    fn cursor_grabbing(self) -> Self {
+        self.cursor(floem::style::CursorStyle::Grabbing)
+    }
 
     // === Position Implementations ===
-    fn absolute(self) -> Self { self.position(floem::style::Position::Absolute) }
-    fn relative(self) -> Self { self.position(floem::style::Position::Relative) }
-    fn fixed(self) -> Self { self.set(floem::style::IsFixed, true) }
-    fn inset_0(self) -> Self { self.inset(0.0) }
-    fn left_0(self) -> Self { self.inset_left(0.0) }
-    fn left_1_2(self) -> Self { self.inset_left(Pct(50.0)) }
-    fn left_full(self) -> Self { self.inset_left(Pct(100.0)) }
-    fn top_0(self) -> Self { self.inset_top(0.0) }
-    fn top_1_2(self) -> Self { self.inset_top(Pct(50.0)) }
-    fn top_full(self) -> Self { self.inset_top(Pct(100.0)) }
-    fn right_0(self) -> Self { self.inset_right(0.0) }
-    fn right_1_2(self) -> Self { self.inset_right(Pct(50.0)) }
-    fn right_full(self) -> Self { self.inset_right(Pct(100.0)) }
-    fn bottom_0(self) -> Self { self.inset_bottom(0.0) }
-    fn bottom_1_2(self) -> Self { self.inset_bottom(Pct(50.0)) }
-    fn bottom_full(self) -> Self { self.inset_bottom(Pct(100.0)) }
+    fn absolute(self) -> Self {
+        self.position(floem::style::Position::Absolute)
+    }
+    fn relative(self) -> Self {
+        self.position(floem::style::Position::Relative)
+    }
+    fn fixed(self) -> Self {
+        self.set(floem::style::IsFixed, true)
+    }
+    fn inset_0(self) -> Self {
+        self.inset(0.0)
+    }
+    fn left_0(self) -> Self {
+        self.inset_left(0.0)
+    }
+    fn left_1_2(self) -> Self {
+        self.inset_left(Pct(50.0))
+    }
+    fn left_full(self) -> Self {
+        self.inset_left(Pct(100.0))
+    }
+    fn top_0(self) -> Self {
+        self.inset_top(0.0)
+    }
+    fn top_1_2(self) -> Self {
+        self.inset_top(Pct(50.0))
+    }
+    fn top_full(self) -> Self {
+        self.inset_top(Pct(100.0))
+    }
+    fn right_0(self) -> Self {
+        self.inset_right(0.0)
+    }
+    fn right_1_2(self) -> Self {
+        self.inset_right(Pct(50.0))
+    }
+    fn right_full(self) -> Self {
+        self.inset_right(Pct(100.0))
+    }
+    fn bottom_0(self) -> Self {
+        self.inset_bottom(0.0)
+    }
+    fn bottom_1_2(self) -> Self {
+        self.inset_bottom(Pct(50.0))
+    }
+    fn bottom_full(self) -> Self {
+        self.inset_bottom(Pct(100.0))
+    }
 
     // === Justify Content Implementations ===
-    fn justify_start(self) -> Self { self.justify_content(Some(floem::style::JustifyContent::FlexStart)) }
-    fn justify_center(self) -> Self { self.justify_content(Some(floem::style::JustifyContent::Center)) }
-    fn justify_end(self) -> Self { self.justify_content(Some(floem::style::JustifyContent::FlexEnd)) }
-    fn justify_between(self) -> Self { self.justify_content(Some(floem::style::JustifyContent::SpaceBetween)) }
-    fn justify_around(self) -> Self { self.justify_content(Some(floem::style::JustifyContent::SpaceAround)) }
-    fn justify_evenly(self) -> Self { self.justify_content(Some(floem::style::JustifyContent::SpaceEvenly)) }
+    fn justify_start(self) -> Self {
+        self.justify_content(Some(floem::style::JustifyContent::FlexStart))
+    }
+    fn justify_center(self) -> Self {
+        self.justify_content(Some(floem::style::JustifyContent::Center))
+    }
+    fn justify_end(self) -> Self {
+        self.justify_content(Some(floem::style::JustifyContent::FlexEnd))
+    }
+    fn justify_between(self) -> Self {
+        self.justify_content(Some(floem::style::JustifyContent::SpaceBetween))
+    }
+    fn justify_around(self) -> Self {
+        self.justify_content(Some(floem::style::JustifyContent::SpaceAround))
+    }
+    fn justify_evenly(self) -> Self {
+        self.justify_content(Some(floem::style::JustifyContent::SpaceEvenly))
+    }
 
     // === Align Items Implementations ===
-    fn items_start(self) -> Self { self.align_items(Some(floem::style::AlignItems::FlexStart)) }
-    fn items_center(self) -> Self { self.align_items(Some(floem::style::AlignItems::Center)) }
-    fn items_end(self) -> Self { self.align_items(Some(floem::style::AlignItems::FlexEnd)) }
-    fn items_stretch(self) -> Self { self.align_items(Some(floem::style::AlignItems::Stretch)) }
-    fn items_baseline(self) -> Self { self.align_items(Some(floem::style::AlignItems::Baseline)) }
+    fn items_start(self) -> Self {
+        self.align_items(Some(floem::style::AlignItems::FlexStart))
+    }
+    fn items_center(self) -> Self {
+        self.align_items(Some(floem::style::AlignItems::Center))
+    }
+    fn items_end(self) -> Self {
+        self.align_items(Some(floem::style::AlignItems::FlexEnd))
+    }
+    fn items_stretch(self) -> Self {
+        self.align_items(Some(floem::style::AlignItems::Stretch))
+    }
+    fn items_baseline(self) -> Self {
+        self.align_items(Some(floem::style::AlignItems::Baseline))
+    }
 
     // === Translate Implementations ===
-    fn translate_x_1_2(self) -> Self { self.translate_x(Pct(50.0)) }
-    fn translate_x_neg_1_2(self) -> Self { self.translate_x(Pct(-50.0)) }
-    fn translate_y_1_2(self) -> Self { self.translate_y(Pct(50.0)) }
-    fn translate_y_neg_1_2(self) -> Self { self.translate_y(Pct(-50.0)) }
-    fn translate_x_full(self) -> Self { self.translate_x(Pct(100.0)) }
-    fn translate_x_neg_full(self) -> Self { self.translate_x(Pct(-100.0)) }
-    fn translate_y_full(self) -> Self { self.translate_y(Pct(100.0)) }
-    fn translate_y_neg_full(self) -> Self { self.translate_y(Pct(-100.0)) }
+    fn translate_x_1_2(self) -> Self {
+        self.translate_x(Pct(50.0))
+    }
+    fn translate_x_neg_1_2(self) -> Self {
+        self.translate_x(Pct(-50.0))
+    }
+    fn translate_y_1_2(self) -> Self {
+        self.translate_y(Pct(50.0))
+    }
+    fn translate_y_neg_1_2(self) -> Self {
+        self.translate_y(Pct(-50.0))
+    }
+    fn translate_x_full(self) -> Self {
+        self.translate_x(Pct(100.0))
+    }
+    fn translate_x_neg_full(self) -> Self {
+        self.translate_x(Pct(-100.0))
+    }
+    fn translate_y_full(self) -> Self {
+        self.translate_y(Pct(100.0))
+    }
+    fn translate_y_neg_full(self) -> Self {
+        self.translate_y(Pct(-100.0))
+    }
 
     // === Border Color Implementations ===
-    fn border_transparent(self) -> Self { self.border_color(colors::TRANSPARENT) }
-    fn border_black(self) -> Self { self.border_color(colors::BLACK) }
-    fn border_white(self) -> Self { self.border_color(colors::WHITE) }
-    fn border_gray_200(self) -> Self { self.border_color(colors::gray::C200) }
-    fn border_gray_300(self) -> Self { self.border_color(colors::gray::C300) }
-    fn border_gray_400(self) -> Self { self.border_color(colors::gray::C400) }
-    fn border_gray_500(self) -> Self { self.border_color(colors::gray::C500) }
-    fn border_gray_600(self) -> Self { self.border_color(colors::gray::C600) }
-    fn border_red_500(self) -> Self { self.border_color(colors::red::C500) }
-    fn border_blue_500(self) -> Self { self.border_color(colors::blue::C500) }
-    fn border_green_500(self) -> Self { self.border_color(colors::green::C500) }
+    fn border_transparent(self) -> Self {
+        self.border_color(colors::TRANSPARENT)
+    }
+    fn border_black(self) -> Self {
+        self.border_color(colors::BLACK)
+    }
+    fn border_white(self) -> Self {
+        self.border_color(colors::WHITE)
+    }
+    fn border_gray_200(self) -> Self {
+        self.border_color(colors::gray::C200)
+    }
+    fn border_gray_300(self) -> Self {
+        self.border_color(colors::gray::C300)
+    }
+    fn border_gray_400(self) -> Self {
+        self.border_color(colors::gray::C400)
+    }
+    fn border_gray_500(self) -> Self {
+        self.border_color(colors::gray::C500)
+    }
+    fn border_gray_600(self) -> Self {
+        self.border_color(colors::gray::C600)
+    }
+    fn border_red_500(self) -> Self {
+        self.border_color(colors::red::C500)
+    }
+    fn border_blue_500(self) -> Self {
+        self.border_color(colors::blue::C500)
+    }
+    fn border_green_500(self) -> Self {
+        self.border_color(colors::green::C500)
+    }
 }
 
 #[cfg(test)]

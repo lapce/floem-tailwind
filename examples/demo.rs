@@ -14,36 +14,28 @@ fn app_view() -> impl IntoView {
 
     v_stack((
         // Header
-        label(|| "floem-tailwind Demo")
-            .style(|s| s.text_slate_900().font_size(24.0).mb_4()),
-
+        label(|| "floem-tailwind Demo").style(|s| s.text_slate_900().font_size(24.0).mb_4()),
         // Counter section with Tailwind-style utilities
         h_stack((
-            button("Increment")
-                .action(move || counter += 1)
-                .style(|s| {
-                    s.bg_blue_500()
-                        .text_white()
-                        .px_4()
-                        .py_2()
-                        .rounded_md()
-                        .hover(|s| s.bg_blue_600())
-                }),
-            label(move || format!("Count: {counter}"))
-                .style(|s| s.text_gray_700().px_4()),
-            button("Decrement")
-                .action(move || counter -= 1)
-                .style(|s| {
-                    s.bg_red_500()
-                        .text_white()
-                        .px_4()
-                        .py_2()
-                        .rounded_md()
-                        .hover(|s| s.bg_red_600())
-                }),
+            button("Increment").action(move || counter += 1).style(|s| {
+                s.bg_blue_500()
+                    .text_white()
+                    .px_4()
+                    .py_2()
+                    .rounded_md()
+                    .hover(|s| s.bg_blue_600())
+            }),
+            label(move || format!("Count: {counter}")).style(|s| s.text_gray_700().px_4()),
+            button("Decrement").action(move || counter -= 1).style(|s| {
+                s.bg_red_500()
+                    .text_white()
+                    .px_4()
+                    .py_2()
+                    .rounded_md()
+                    .hover(|s| s.bg_red_600())
+            }),
         ))
         .style(|s| s.gap_2().items_center()),
-
         // Card example
         v_stack((
             label(|| "Card Title").style(|s| s.text_gray_900().font_size(18.0)),
@@ -59,7 +51,6 @@ fn app_view() -> impl IntoView {
                 .border_gray_200()
                 .w_md()
         }),
-
         // Color palette preview
         h_stack((
             empty().style(|s| s.size_8().bg_red_500().rounded()),
