@@ -1326,6 +1326,69 @@ pub trait TailwindExt: Sized {
     fn cursor_grab(self) -> Self;
     fn cursor_grabbing(self) -> Self;
 
+    // === Position Methods ===
+    fn absolute(self) -> Self;
+    fn relative(self) -> Self;
+    fn fixed(self) -> Self;
+    fn inset_0(self) -> Self;
+    /// left-0
+    fn left_0(self) -> Self;
+    /// left-1/2 (50%)
+    fn left_1_2(self) -> Self;
+    /// left-full (100%)
+    fn left_full(self) -> Self;
+    /// top-0
+    fn top_0(self) -> Self;
+    /// top-1/2 (50%)
+    fn top_1_2(self) -> Self;
+    /// top-full (100%)
+    fn top_full(self) -> Self;
+    /// right-0
+    fn right_0(self) -> Self;
+    /// right-1/2 (50%)
+    fn right_1_2(self) -> Self;
+    /// right-full (100%)
+    fn right_full(self) -> Self;
+    /// bottom-0
+    fn bottom_0(self) -> Self;
+    /// bottom-1/2 (50%)
+    fn bottom_1_2(self) -> Self;
+    /// bottom-full (100%)
+    fn bottom_full(self) -> Self;
+
+    // === Justify Content Methods ===
+    fn justify_start(self) -> Self;
+    fn justify_center(self) -> Self;
+    fn justify_end(self) -> Self;
+    fn justify_between(self) -> Self;
+    fn justify_around(self) -> Self;
+    fn justify_evenly(self) -> Self;
+
+    // === Align Items Methods ===
+    fn items_start(self) -> Self;
+    fn items_center(self) -> Self;
+    fn items_end(self) -> Self;
+    fn items_stretch(self) -> Self;
+    fn items_baseline(self) -> Self;
+
+    // === Translate Methods ===
+    /// translate-x-1/2 (50%)
+    fn translate_x_1_2(self) -> Self;
+    /// -translate-x-1/2 (-50%)
+    fn translate_x_neg_1_2(self) -> Self;
+    /// translate-y-1/2 (50%)
+    fn translate_y_1_2(self) -> Self;
+    /// -translate-y-1/2 (-50%)
+    fn translate_y_neg_1_2(self) -> Self;
+    /// translate-x-full (100%)
+    fn translate_x_full(self) -> Self;
+    /// -translate-x-full (-100%)
+    fn translate_x_neg_full(self) -> Self;
+    /// translate-y-full (100%)
+    fn translate_y_full(self) -> Self;
+    /// -translate-y-full (-100%)
+    fn translate_y_neg_full(self) -> Self;
+
     // === Border Color Methods ===
     fn border_transparent(self) -> Self;
     fn border_black(self) -> Self;
@@ -2115,6 +2178,49 @@ impl TailwindExt for Style {
     fn cursor_move(self) -> Self { self.cursor(floem::style::CursorStyle::Move) }
     fn cursor_grab(self) -> Self { self.cursor(floem::style::CursorStyle::Grab) }
     fn cursor_grabbing(self) -> Self { self.cursor(floem::style::CursorStyle::Grabbing) }
+
+    // === Position Implementations ===
+    fn absolute(self) -> Self { self.position(floem::style::Position::Absolute) }
+    fn relative(self) -> Self { self.position(floem::style::Position::Relative) }
+    fn fixed(self) -> Self { self.set(floem::style::IsFixed, true) }
+    fn inset_0(self) -> Self { self.inset(0.0) }
+    fn left_0(self) -> Self { self.inset_left(0.0) }
+    fn left_1_2(self) -> Self { self.inset_left(Pct(50.0)) }
+    fn left_full(self) -> Self { self.inset_left(Pct(100.0)) }
+    fn top_0(self) -> Self { self.inset_top(0.0) }
+    fn top_1_2(self) -> Self { self.inset_top(Pct(50.0)) }
+    fn top_full(self) -> Self { self.inset_top(Pct(100.0)) }
+    fn right_0(self) -> Self { self.inset_right(0.0) }
+    fn right_1_2(self) -> Self { self.inset_right(Pct(50.0)) }
+    fn right_full(self) -> Self { self.inset_right(Pct(100.0)) }
+    fn bottom_0(self) -> Self { self.inset_bottom(0.0) }
+    fn bottom_1_2(self) -> Self { self.inset_bottom(Pct(50.0)) }
+    fn bottom_full(self) -> Self { self.inset_bottom(Pct(100.0)) }
+
+    // === Justify Content Implementations ===
+    fn justify_start(self) -> Self { self.justify_content(Some(floem::style::JustifyContent::FlexStart)) }
+    fn justify_center(self) -> Self { self.justify_content(Some(floem::style::JustifyContent::Center)) }
+    fn justify_end(self) -> Self { self.justify_content(Some(floem::style::JustifyContent::FlexEnd)) }
+    fn justify_between(self) -> Self { self.justify_content(Some(floem::style::JustifyContent::SpaceBetween)) }
+    fn justify_around(self) -> Self { self.justify_content(Some(floem::style::JustifyContent::SpaceAround)) }
+    fn justify_evenly(self) -> Self { self.justify_content(Some(floem::style::JustifyContent::SpaceEvenly)) }
+
+    // === Align Items Implementations ===
+    fn items_start(self) -> Self { self.align_items(Some(floem::style::AlignItems::FlexStart)) }
+    fn items_center(self) -> Self { self.align_items(Some(floem::style::AlignItems::Center)) }
+    fn items_end(self) -> Self { self.align_items(Some(floem::style::AlignItems::FlexEnd)) }
+    fn items_stretch(self) -> Self { self.align_items(Some(floem::style::AlignItems::Stretch)) }
+    fn items_baseline(self) -> Self { self.align_items(Some(floem::style::AlignItems::Baseline)) }
+
+    // === Translate Implementations ===
+    fn translate_x_1_2(self) -> Self { self.translate_x(Pct(50.0)) }
+    fn translate_x_neg_1_2(self) -> Self { self.translate_x(Pct(-50.0)) }
+    fn translate_y_1_2(self) -> Self { self.translate_y(Pct(50.0)) }
+    fn translate_y_neg_1_2(self) -> Self { self.translate_y(Pct(-50.0)) }
+    fn translate_x_full(self) -> Self { self.translate_x(Pct(100.0)) }
+    fn translate_x_neg_full(self) -> Self { self.translate_x(Pct(-100.0)) }
+    fn translate_y_full(self) -> Self { self.translate_y(Pct(100.0)) }
+    fn translate_y_neg_full(self) -> Self { self.translate_y(Pct(-100.0)) }
 
     // === Border Color Implementations ===
     fn border_transparent(self) -> Self { self.border_color(colors::TRANSPARENT) }
