@@ -1371,6 +1371,20 @@ pub trait TailwindExt: Sized {
     fn items_stretch(self) -> Self;
     fn items_baseline(self) -> Self;
 
+    // === Align Self Methods ===
+    /// align-self: auto (inherit from parent's align-items)
+    fn self_auto(self) -> Self;
+    /// align-self: flex-start
+    fn self_start(self) -> Self;
+    /// align-self: center
+    fn self_center(self) -> Self;
+    /// align-self: flex-end
+    fn self_end(self) -> Self;
+    /// align-self: stretch
+    fn self_stretch(self) -> Self;
+    /// align-self: baseline
+    fn self_baseline(self) -> Self;
+
     // === Translate Methods ===
     /// translate-x-1/2 (50%)
     fn translate_x_1_2(self) -> Self;
@@ -2968,6 +2982,26 @@ impl TailwindExt for Style {
     }
     fn items_baseline(self) -> Self {
         self.align_items(Some(floem::style::AlignItems::Baseline))
+    }
+
+    // === Align Self Implementations ===
+    fn self_auto(self) -> Self {
+        self.align_self(None)
+    }
+    fn self_start(self) -> Self {
+        self.align_self(Some(floem::style::AlignItems::FlexStart))
+    }
+    fn self_center(self) -> Self {
+        self.align_self(Some(floem::style::AlignItems::Center))
+    }
+    fn self_end(self) -> Self {
+        self.align_self(Some(floem::style::AlignItems::FlexEnd))
+    }
+    fn self_stretch(self) -> Self {
+        self.align_self(Some(floem::style::AlignItems::Stretch))
+    }
+    fn self_baseline(self) -> Self {
+        self.align_self(Some(floem::style::AlignItems::Baseline))
     }
 
     // === Translate Implementations ===
