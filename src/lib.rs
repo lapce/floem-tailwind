@@ -1415,6 +1415,92 @@ pub trait TailwindExt: Sized {
     fn border_red_500(self) -> Self;
     fn border_blue_500(self) -> Self;
     fn border_green_500(self) -> Self;
+
+    // === Opacity Methods ===
+    /// opacity-0 (0%)
+    fn opacity_0(self) -> Self;
+    /// opacity-5 (5%)
+    fn opacity_5(self) -> Self;
+    /// opacity-10 (10%)
+    fn opacity_10(self) -> Self;
+    /// opacity-15 (15%)
+    fn opacity_15(self) -> Self;
+    /// opacity-20 (20%)
+    fn opacity_20(self) -> Self;
+    /// opacity-25 (25%)
+    fn opacity_25(self) -> Self;
+    /// opacity-30 (30%)
+    fn opacity_30(self) -> Self;
+    /// opacity-35 (35%)
+    fn opacity_35(self) -> Self;
+    /// opacity-40 (40%)
+    fn opacity_40(self) -> Self;
+    /// opacity-45 (45%)
+    fn opacity_45(self) -> Self;
+    /// opacity-50 (50%)
+    fn opacity_50(self) -> Self;
+    /// opacity-55 (55%)
+    fn opacity_55(self) -> Self;
+    /// opacity-60 (60%)
+    fn opacity_60(self) -> Self;
+    /// opacity-65 (65%)
+    fn opacity_65(self) -> Self;
+    /// opacity-70 (70%)
+    fn opacity_70(self) -> Self;
+    /// opacity-75 (75%)
+    fn opacity_75(self) -> Self;
+    /// opacity-80 (80%)
+    fn opacity_80(self) -> Self;
+    /// opacity-85 (85%)
+    fn opacity_85(self) -> Self;
+    /// opacity-90 (90%)
+    fn opacity_90(self) -> Self;
+    /// opacity-95 (95%)
+    fn opacity_95(self) -> Self;
+    /// opacity-100 (100%)
+    fn opacity_100(self) -> Self;
+
+    // === Pointer Events Methods ===
+    /// pointer-events-none
+    fn pointer_events_none(self) -> Self;
+    /// pointer-events-auto
+    fn pointer_events_auto(self) -> Self;
+
+    // === Overflow Methods ===
+    /// overflow-hidden
+    fn overflow_hidden(self) -> Self;
+    /// overflow-visible
+    fn overflow_visible(self) -> Self;
+    /// overflow-scroll
+    fn overflow_scroll(self) -> Self;
+    /// overflow-clip
+    fn overflow_clip(self) -> Self;
+    /// overflow-auto
+    fn overflow_auto(self) -> Self;
+    /// overflow-x-hidden
+    fn overflow_x_hidden(self) -> Self;
+    /// overflow-x-visible
+    fn overflow_x_visible(self) -> Self;
+    /// overflow-x-scroll
+    fn overflow_x_scroll(self) -> Self;
+    /// overflow-x-clip
+    fn overflow_x_clip(self) -> Self;
+    /// overflow-x-auto
+    fn overflow_x_auto(self) -> Self;
+    /// overflow-y-hidden
+    fn overflow_y_hidden(self) -> Self;
+    /// overflow-y-visible
+    fn overflow_y_visible(self) -> Self;
+    /// overflow-y-scroll
+    fn overflow_y_scroll(self) -> Self;
+    /// overflow-y-clip
+    fn overflow_y_clip(self) -> Self;
+    /// overflow-y-auto
+    fn overflow_y_auto(self) -> Self;
+
+    // === Outline Methods ===
+    /// outline-none (removes outline)
+    fn outline_none(self) -> Self;
 }
 
 impl TailwindExt for Style {
@@ -3063,6 +3149,142 @@ impl TailwindExt for Style {
     }
     fn border_green_500(self) -> Self {
         self.border_color(colors::green::C500)
+    }
+
+    // === Opacity Implementations ===
+    fn opacity_0(self) -> Self {
+        self.set(floem::style::Opacity, 0.0)
+    }
+    fn opacity_5(self) -> Self {
+        self.set(floem::style::Opacity, 0.05)
+    }
+    fn opacity_10(self) -> Self {
+        self.set(floem::style::Opacity, 0.10)
+    }
+    fn opacity_15(self) -> Self {
+        self.set(floem::style::Opacity, 0.15)
+    }
+    fn opacity_20(self) -> Self {
+        self.set(floem::style::Opacity, 0.20)
+    }
+    fn opacity_25(self) -> Self {
+        self.set(floem::style::Opacity, 0.25)
+    }
+    fn opacity_30(self) -> Self {
+        self.set(floem::style::Opacity, 0.30)
+    }
+    fn opacity_35(self) -> Self {
+        self.set(floem::style::Opacity, 0.35)
+    }
+    fn opacity_40(self) -> Self {
+        self.set(floem::style::Opacity, 0.40)
+    }
+    fn opacity_45(self) -> Self {
+        self.set(floem::style::Opacity, 0.45)
+    }
+    fn opacity_50(self) -> Self {
+        self.set(floem::style::Opacity, 0.50)
+    }
+    fn opacity_55(self) -> Self {
+        self.set(floem::style::Opacity, 0.55)
+    }
+    fn opacity_60(self) -> Self {
+        self.set(floem::style::Opacity, 0.60)
+    }
+    fn opacity_65(self) -> Self {
+        self.set(floem::style::Opacity, 0.65)
+    }
+    fn opacity_70(self) -> Self {
+        self.set(floem::style::Opacity, 0.70)
+    }
+    fn opacity_75(self) -> Self {
+        self.set(floem::style::Opacity, 0.75)
+    }
+    fn opacity_80(self) -> Self {
+        self.set(floem::style::Opacity, 0.80)
+    }
+    fn opacity_85(self) -> Self {
+        self.set(floem::style::Opacity, 0.85)
+    }
+    fn opacity_90(self) -> Self {
+        self.set(floem::style::Opacity, 0.90)
+    }
+    fn opacity_95(self) -> Self {
+        self.set(floem::style::Opacity, 0.95)
+    }
+    fn opacity_100(self) -> Self {
+        self.set(floem::style::Opacity, 1.0)
+    }
+
+    // === Pointer Events Implementations ===
+    fn pointer_events_none(self) -> Self {
+        self.set(
+            floem::style::PointerEventsProp,
+            Some(floem::style::PointerEvents::None),
+        )
+    }
+    fn pointer_events_auto(self) -> Self {
+        self.set(
+            floem::style::PointerEventsProp,
+            Some(floem::style::PointerEvents::Auto),
+        )
+    }
+
+    // === Overflow Implementations ===
+    fn overflow_hidden(self) -> Self {
+        self.set(floem::style::OverflowX, floem::taffy::Overflow::Hidden)
+            .set(floem::style::OverflowY, floem::taffy::Overflow::Hidden)
+    }
+    fn overflow_visible(self) -> Self {
+        self.set(floem::style::OverflowX, floem::taffy::Overflow::Visible)
+            .set(floem::style::OverflowY, floem::taffy::Overflow::Visible)
+    }
+    fn overflow_scroll(self) -> Self {
+        self.set(floem::style::OverflowX, floem::taffy::Overflow::Scroll)
+            .set(floem::style::OverflowY, floem::taffy::Overflow::Scroll)
+    }
+    fn overflow_clip(self) -> Self {
+        self.set(floem::style::OverflowX, floem::taffy::Overflow::Clip)
+            .set(floem::style::OverflowY, floem::taffy::Overflow::Clip)
+    }
+    fn overflow_auto(self) -> Self {
+        self.set(floem::style::OverflowX, floem::taffy::Overflow::Scroll)
+            .set(floem::style::OverflowY, floem::taffy::Overflow::Scroll)
+    }
+    fn overflow_x_hidden(self) -> Self {
+        self.set(floem::style::OverflowX, floem::taffy::Overflow::Hidden)
+    }
+    fn overflow_x_visible(self) -> Self {
+        self.set(floem::style::OverflowX, floem::taffy::Overflow::Visible)
+    }
+    fn overflow_x_scroll(self) -> Self {
+        self.set(floem::style::OverflowX, floem::taffy::Overflow::Scroll)
+    }
+    fn overflow_x_clip(self) -> Self {
+        self.set(floem::style::OverflowX, floem::taffy::Overflow::Clip)
+    }
+    fn overflow_x_auto(self) -> Self {
+        self.set(floem::style::OverflowX, floem::taffy::Overflow::Scroll)
+    }
+    fn overflow_y_hidden(self) -> Self {
+        self.set(floem::style::OverflowY, floem::taffy::Overflow::Hidden)
+    }
+    fn overflow_y_visible(self) -> Self {
+        self.set(floem::style::OverflowY, floem::taffy::Overflow::Visible)
+    }
+    fn overflow_y_scroll(self) -> Self {
+        self.set(floem::style::OverflowY, floem::taffy::Overflow::Scroll)
+    }
+    fn overflow_y_clip(self) -> Self {
+        self.set(floem::style::OverflowY, floem::taffy::Overflow::Clip)
+    }
+    fn overflow_y_auto(self) -> Self {
+        self.set(floem::style::OverflowY, floem::taffy::Overflow::Scroll)
+    }
+
+    // === Outline Implementations ===
+    fn outline_none(self) -> Self {
+        self.outline(0.0)
     }
 }
 
