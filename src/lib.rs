@@ -42,10 +42,22 @@
 //! ```
 
 use floem::style::Style;
-use floem::unit::{Pct, PxPctAuto};
-use peniko::Color;
+use floem::unit::{Pct, LengthAuto};
+use floem::peniko::Color;
 
 pub mod colors;
+pub mod flexbox;
+pub mod layout;
+pub mod interactivity;
+pub mod colors_ext;
+pub mod gap;
+pub mod opacity;
+pub mod border_side;
+pub mod special_colors;
+pub mod leading;
+pub mod inset;
+pub mod min_max_height;
+pub mod number_font_size;
 
 /// Tailwind-style spacing scale (in pixels)
 /// Each unit = 4px (following Tailwind's 0.25rem base with 16px root)
@@ -133,14 +145,14 @@ pub mod font_size {
 
 /// Font weight values matching Tailwind CSS
 pub mod font_weight {
-    use floem::text::Weight;
+    use floem::text::FontWeight as Weight;
 
     pub const THIN: Weight = Weight::THIN; // 100
     pub const EXTRALIGHT: Weight = Weight::EXTRA_LIGHT; // 200
     pub const LIGHT: Weight = Weight::LIGHT; // 300
     pub const NORMAL: Weight = Weight::NORMAL; // 400
     pub const MEDIUM: Weight = Weight::MEDIUM; // 500
-    pub const SEMIBOLD: Weight = Weight::SEMIBOLD; // 600
+    pub const SEMIBOLD: Weight = Weight::SEMI_BOLD; // 600
     pub const BOLD: Weight = Weight::BOLD; // 700
     pub const EXTRABOLD: Weight = Weight::EXTRA_BOLD; // 800
     pub const BLACK: Weight = Weight::BLACK; // 900
@@ -160,7 +172,7 @@ pub mod line_height {
 /// Each shadow is defined by (h_offset, v_offset, blur, spread, opacity)
 pub mod shadow {
     use floem::style::BoxShadow;
-    use peniko::Color;
+    use floem::peniko::Color;
 
     /// Creates a shadow color with the given opacity (0.0 - 1.0)
     fn shadow_color(opacity: f32) -> Color {
@@ -1583,7 +1595,7 @@ impl TailwindExt for Style {
         self.width(Pct(100.0))
     }
     fn w_auto(self) -> Self {
-        self.width(PxPctAuto::Auto)
+        self.width(LengthAuto::Auto)
     }
     // Fractional widths (GPUI-style)
     fn w_1_2(self) -> Self {
@@ -1702,7 +1714,7 @@ impl TailwindExt for Style {
         self.height(Pct(100.0))
     }
     fn h_auto(self) -> Self {
-        self.height(PxPctAuto::Auto)
+        self.height(LengthAuto::Auto)
     }
     // Fractional heights (GPUI-style)
     fn h_1_2(self) -> Self {
@@ -2065,7 +2077,7 @@ impl TailwindExt for Style {
     }
 
     fn m_auto(self) -> Self {
-        self.margin(PxPctAuto::Auto)
+        self.margin(LengthAuto::Auto)
     }
 
     // Horizontal margin
@@ -2091,7 +2103,7 @@ impl TailwindExt for Style {
     }
 
     fn mx_auto(self) -> Self {
-        self.margin_horiz(PxPctAuto::Auto)
+        self.margin_horiz(LengthAuto::Auto)
     }
 
     // Vertical margin
@@ -2117,7 +2129,7 @@ impl TailwindExt for Style {
     }
 
     fn my_auto(self) -> Self {
-        self.margin_vert(PxPctAuto::Auto)
+        self.margin_vert(LengthAuto::Auto)
     }
 
     // Individual margin sides
@@ -2146,7 +2158,7 @@ impl TailwindExt for Style {
         self.margin_top(spacing::SPACING_8)
     }
     fn mt_auto(self) -> Self {
-        self.margin_top(PxPctAuto::Auto)
+        self.margin_top(LengthAuto::Auto)
     }
 
     fn mb_0(self) -> Self {
@@ -2174,7 +2186,7 @@ impl TailwindExt for Style {
         self.margin_bottom(spacing::SPACING_8)
     }
     fn mb_auto(self) -> Self {
-        self.margin_bottom(PxPctAuto::Auto)
+        self.margin_bottom(LengthAuto::Auto)
     }
 
     fn ml_0(self) -> Self {
@@ -2202,7 +2214,7 @@ impl TailwindExt for Style {
         self.margin_left(spacing::SPACING_8)
     }
     fn ml_auto(self) -> Self {
-        self.margin_left(PxPctAuto::Auto)
+        self.margin_left(LengthAuto::Auto)
     }
 
     fn mr_0(self) -> Self {
@@ -2230,7 +2242,7 @@ impl TailwindExt for Style {
         self.margin_right(spacing::SPACING_8)
     }
     fn mr_auto(self) -> Self {
-        self.margin_right(PxPctAuto::Auto)
+        self.margin_right(LengthAuto::Auto)
     }
 
     // === Gap Implementations ===
@@ -3035,59 +3047,59 @@ impl TailwindExt for Style {
 
     // === Justify Content Implementations ===
     fn justify_start(self) -> Self {
-        self.justify_content(Some(floem::style::JustifyContent::FlexStart))
+        self.justify_content(floem::style::JustifyContent::FlexStart)
     }
     fn justify_center(self) -> Self {
-        self.justify_content(Some(floem::style::JustifyContent::Center))
+        self.justify_content(floem::style::JustifyContent::Center)
     }
     fn justify_end(self) -> Self {
-        self.justify_content(Some(floem::style::JustifyContent::FlexEnd))
+        self.justify_content(floem::style::JustifyContent::FlexEnd)
     }
     fn justify_between(self) -> Self {
-        self.justify_content(Some(floem::style::JustifyContent::SpaceBetween))
+        self.justify_content(floem::style::JustifyContent::SpaceBetween)
     }
     fn justify_around(self) -> Self {
-        self.justify_content(Some(floem::style::JustifyContent::SpaceAround))
+        self.justify_content(floem::style::JustifyContent::SpaceAround)
     }
     fn justify_evenly(self) -> Self {
-        self.justify_content(Some(floem::style::JustifyContent::SpaceEvenly))
+        self.justify_content(floem::style::JustifyContent::SpaceEvenly)
     }
 
     // === Align Items Implementations ===
     fn items_start(self) -> Self {
-        self.align_items(Some(floem::style::AlignItems::FlexStart))
+        self.align_items(floem::style::AlignItems::FlexStart)
     }
     fn items_center(self) -> Self {
-        self.align_items(Some(floem::style::AlignItems::Center))
+        self.align_items(floem::style::AlignItems::Center)
     }
     fn items_end(self) -> Self {
-        self.align_items(Some(floem::style::AlignItems::FlexEnd))
+        self.align_items(floem::style::AlignItems::FlexEnd)
     }
     fn items_stretch(self) -> Self {
-        self.align_items(Some(floem::style::AlignItems::Stretch))
+        self.align_items(floem::style::AlignItems::Stretch)
     }
     fn items_baseline(self) -> Self {
-        self.align_items(Some(floem::style::AlignItems::Baseline))
+        self.align_items(floem::style::AlignItems::Baseline)
     }
 
     // === Align Self Implementations ===
     fn self_auto(self) -> Self {
-        self.align_self(None)
+        self
     }
     fn self_start(self) -> Self {
-        self.align_self(Some(floem::style::AlignItems::FlexStart))
+        self.align_self(floem::style::AlignItems::FlexStart)
     }
     fn self_center(self) -> Self {
-        self.align_self(Some(floem::style::AlignItems::Center))
+        self.align_self(floem::style::AlignItems::Center)
     }
     fn self_end(self) -> Self {
-        self.align_self(Some(floem::style::AlignItems::FlexEnd))
+        self.align_self(floem::style::AlignItems::FlexEnd)
     }
     fn self_stretch(self) -> Self {
-        self.align_self(Some(floem::style::AlignItems::Stretch))
+        self.align_self(floem::style::AlignItems::Stretch)
     }
     fn self_baseline(self) -> Self {
-        self.align_self(Some(floem::style::AlignItems::Baseline))
+        self.align_self(floem::style::AlignItems::Baseline)
     }
 
     // === Translate Implementations ===
@@ -3315,3 +3327,16 @@ mod tests {
         assert_eq!(radius::ROUNDED_LG, 8.0);
     }
 }
+
+pub use flexbox::TailwindFlexboxExt;
+pub use layout::TailwindLayoutExt;
+pub use interactivity::TailwindInteractivityExt;
+pub use colors_ext::TailwindColorExt;
+pub use gap::TailwindGapExt;
+pub use opacity::TailwindOpacityExt;
+pub use border_side::TailwindBorderSideExt;
+pub use special_colors::TailwindSpecialColorExt;
+pub use leading::TailwindLeadingExt;
+pub use inset::TailwindInsetExt;
+pub use min_max_height::TailwindMinMaxHeightExt;
+pub use number_font_size::TailwindNumberFontSizeExt;

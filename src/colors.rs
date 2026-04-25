@@ -1,15 +1,15 @@
 //! Tailwind CSS color palette
 //!
-//! This module provides Tailwind's default color palette as `peniko::Color` values.
+//! This module provides Tailwind's default color palette as `floem::peniko::Color` values.
 //! Each color family includes shades from 50 (lightest) to 950 (darkest).
 
-use peniko::Color;
+use floem::peniko::Color;
 
 /// Macro to define a color palette
 macro_rules! define_palette {
     ($name:ident, $($shade:ident => ($r:expr, $g:expr, $b:expr)),* $(,)?) => {
         pub mod $name {
-            use peniko::Color;
+            use floem::peniko::Color;
             $(
                 pub const $shade: Color = Color::from_rgb8($r, $g, $b);
             )*
